@@ -135,8 +135,8 @@ In addition to the core Python context compilation engine, this repository featu
 ### 5.1 Local Environment
 ```bash
 # Clone and create virtual environment
-git clone https://github.com/your-username/gemma4-mrast.git
-cd gemma4-mrast
+git clone https://github.com/gautamhardik/mr-ast.git
+cd mr-ast
 python -m venv venv
 source venv/bin/activate  # Or .\venv\Scripts\activate on Windows
 
