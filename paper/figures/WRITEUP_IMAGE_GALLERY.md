@@ -125,10 +125,10 @@ Below is a complete, polished draft that you can paste directly into the **Proje
 
 ## Overview & The Problem
 
-Autonomous software engineering agents powered by modern LLMs (such as Google Gemma 4) operate under strict prompt token budgets ($B \in [2,000, 16,000]$ tokens). Standard retrieval approaches face an intractable dilemma:
+Autonomous software engineering agents powered by modern LLMs (such as Google Gemma 4) operate under strict prompt token budgets (B between 2,000 and 16,000 tokens). Standard retrieval approaches face an intractable dilemma:
 1. **Whole-File Retrieval (`full_file`)**: Rapidly saturates context windows with irrelevant boilerplates and tests, frequently displacing actual implementation targets (the *Full-File Localization Paradox*).
 2. **Snippet Extraction**: Naively extracting localized slices induces syntax errors in **24.8%** of evaluated cases due to truncated enclosing scopes.
-3. **Monolithic Scoping (`bm25_scoped`)**: Redundantly emits full class headers for every retrieved symbol, capping capacity at only ~12.5 symbols at $B=2,000$ tokens.
+3. **Monolithic Scoping (`bm25_scoped`)**: Redundantly emits full class headers for every retrieved symbol, capping capacity at only ~12.5 symbols at B = 2,000 tokens.
 
 To solve this, we introduce **MR-AST**, an offline context compilation framework that formulates context selection as a **Multiple-Choice Knapsack Problem (MCKP)** over a discrete multi-resolution AST projection lattice.
 
@@ -137,12 +137,12 @@ To solve this, we introduce **MR-AST**, an offline context compilation framework
 ## Key Empirical Findings
 
 Across 129 SWE-bench Lite tasks (5,160 factorial benchmark runs across 4 repositories), MR-AST achieves:
-- **$+16.61\text{ pp}$ Recall at 2k Tokens**: Lifts gold symbol recall from 37.28% to 53.89% ($p_{\text{Holm}} = 0.0006$).
-- **$1.55\times$ More Full Implementations**: Allocates 1,849 tokens directly to full code bodies (vs. 1,192 for Scoped BM25), compressing peripheral context into signatures and stubs.
-- **$76.92\%$ Retrospective 16k Recall**: Yields a $+16.44\text{ pp}$ advantage over Scoped BM25 ($p_{\text{Holm-12}} = 0.0043$) and $+20.76\text{ pp}$ over static candidate pools ($p_{\text{Holm-12}} = 0.00056$).
-- **Zero-Leakage 2-Fold Cross-Validation Parity**: 2-fold cross-validation on candidate depth $K(B)$ independently selects expanding schedules ($K \in [60, 400]$) with out-of-fold recall parity (76.92% vs 76.47% at 16k).
+- **+16.61 pp Recall at 2k Tokens**: Lifts gold symbol recall from 37.28% to 53.89% (p = 0.0006).
+- **1.55x More Full Implementations**: Allocates 1,849 tokens directly to full code bodies (vs. 1,192 for Scoped BM25), compressing peripheral context into signatures and stubs.
+- **76.92% Retrospective 16k Recall**: Yields a +16.44 pp advantage over Scoped BM25 (p = 0.0043) and +20.76 pp over static candidate pools (p = 0.00056).
+- **Zero-Leakage 2-Fold Cross-Validation Parity**: 2-fold cross-validation on candidate depth K(B) independently selects expanding schedules (K between 60 and 400) with out-of-fold recall parity (76.92% vs 76.47% at 16k).
 - **Guaranteed Syntactic Validity (Invariant 1)**: Achieves **100.0%** syntax validity (`ast.parse != SyntaxError`) via atomic monotonic symbol pruning.
-- **$-28.3\%$ Downstream Gemma 4 Latency Reduction**: In 18 Vertex AI inference trials with `google/gemma-4-31b-it`, prompt execution dropped from 10.55s to 7.57s ($p = 0.038$), saving $\sim 1\text{ minute}$ across a hypothetical 20-turn agent session.
+- **-28.3% Downstream Gemma 4 Latency Reduction**: In 18 Vertex AI inference trials with `google/gemma-4-31b-it`, prompt execution dropped from 10.55s to 7.57s (p = 0.038), saving approximately 1 minute across a hypothetical 20-turn agent session.
 
 ---
 
@@ -150,20 +150,21 @@ Across 129 SWE-bench Lite tasks (5,160 factorial benchmark runs across 4 reposit
 
 ![Figure 1: MR-AST System Architecture](gallery_1_architecture.png)
 
-### 1. Multi-Resolution Projection Lattice $\mathcal{R}$
-MR-AST projects AST nodes onto a 4-tier lattice:
-- **Tier 3 (FULL)**: Complete function/class bodies.
-- **Tier 2 (SKELETON)**: Signatures, type hints, docstrings, and `...` body suites.
-- **Tier 1 (STUB)**: Minimal identifier headers (median cost 5.0 tokens).
-- **Tier 0 (EXCLUDED)**: Pruned ($\epsilon$).
+### 1. Multi-Resolution Projection Lattice
+MR-AST projects AST nodes onto a 4-tier resolution lattice:
+- **Tier 3 (FULL)**: Complete function and class bodies (100% token cost).
+- **Tier 2 (SKELETON)**: Signatures, type hints, docstrings, and `...` body suites (~35% cost).
+- **Tier 1 (STUB)**: Minimal identifier headers (median cost only 5.0 tokens, ~12% cost).
+- **Tier 0 (EXCLUDED)**: Pruned (0 tokens).
 
-### 2. Pure MCKP Optimization & Schedule $K_{\text{step}}(B)$
-We optimize:
-$$\max_{\mathbf{x}} \sum_{i \in \mathcal{N}} \sum_{r \in \mathcal{R}} \alpha_r u_i x_{ir} \quad \text{s.t.} \quad \sum_{i \in \mathcal{N}} \sum_{r=1}^3 c_{ir} x_{ir} \le B, \quad \sum_{r \in \mathcal{R}} x_{ir} = 1$$
-Candidate pool depth scales dynamically with budget: $K \in \{60, 100, 200, 400\}$. Precedence constraints are removed from the knapsack, delegating structural containment to the serializer and recovering $+5.43\text{ pp}$ recall ($p=0.0050$).
+### 2. Pure MCKP Optimization & Dynamic Schedule K(B)
+Context compilation is formulated as a Multiple-Choice Knapsack Problem:
+- **Objective**: Maximize total information utility across all AST nodes subject to the prompt budget constraint: `Total_Cost <= B`.
+- **Constraint**: Exactly one resolution tier is selected per symbol (`Sum(x_ir) = 1`).
+- **Dynamic Retrieval Depth**: Candidate pool depth scales dynamically with budget: `K in {60, 100, 200, 400}`. Delegating structural containment to the serializer recovers **+5.43 pp** recall (p = 0.0050) while maintaining fast O(N log N) greedy solve times.
 
-### 3. Grammar-Preserving Serializer $\mathcal{C}(\mathbf{x})$
-Reconstructs enclosing classes post-hoc, achieving a **$56.05\%$ pooled deduplication rate** and eliminating 12,224 redundant definitions across 493 reconstructed method runs.
+### 3. Grammar-Preserving Serializer C(x)
+Reconstructs enclosing classes post-hoc, achieving a **56.05% pooled deduplication rate** (eliminating 12,224 redundant definitions across 493 reconstructed method runs).
 
 ![Figure 4: Scope Taxation Deduplication](gallery_4_scope_deduplication.png)
 
@@ -174,12 +175,12 @@ Reconstructs enclosing classes post-hoc, achieving a **$56.05\%$ pooled deduplic
 ![Figure 2: Recall Curves and Cross-Validation Parity](gallery_2_recall_benchmark.png)
 
 ### Matched Results on Retrospective Partition (66 Tasks, 65 Clusters)
-| Token Budget | Dynamic Candidate Depth | Dynamic Policy | Scoped BM25 | Aider RepoMap | Static $K=60$ | $\Delta$ vs BM25 | Holm-12 $p$ |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **2,000** | $K=60$ | **49.88%** | 41.30% | 39.15% | 49.88% | $+8.58\text{ pp}$ | $0.4395\text{ (n.s.)}$ |
-| **4,000** | $K=100$ | **64.76%** | 44.78% | 51.77% | 55.94% | **+19.97 pp** | **0.0072 (***)** |
-| **8,000** | $K=200$ | **71.72%** | 58.22% | 53.06% | 55.94% | **+13.50 pp** | **0.0423 (*)** |
-| **16,000** | $K=400$ | **76.92%** | 60.48% | 62.74% | 56.16% | **+16.44 pp** | **0.0043 (***)** |
+| Token Budget | Dynamic Candidate Depth | MR-AST (Dynamic) | Scoped BM25 | Aider RepoMap | Static K=60 | Diff vs BM25 | Holm-12 p-value |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **2,000** | K = 60 | **49.88%** | 41.30% | 39.15% | 49.88% | +8.58 pp | 0.4395 (n.s.) |
+| **4,000** | K = 100 | **64.76%** | 44.78% | 51.77% | 55.94% | **+19.97 pp** | **0.0072** (p < 0.01) |
+| **8,000** | K = 200 | **71.72%** | 58.22% | 53.06% | 55.94% | **+13.50 pp** | **0.0423** (p < 0.05) |
+| **16,000** | K = 400 | **76.92%** | 60.48% | 62.74% | 56.16% | **+16.44 pp** | **0.0043** (p < 0.01) |
 
 ---
 
@@ -187,11 +188,11 @@ Reconstructs enclosing classes post-hoc, achieving a **$56.05\%$ pooled deduplic
 
 ![Figure 3: Gemma 4 Latency Reduction and Failure Taxonomy](gallery_3_gemma4_latency.png)
 
-In 18 Vertex AI inferences on `google/gemma-4-31b-it`, MR-AST delivered a **$-28.3\%$** latency speedup ($7.57\text{s}$ vs $10.55\text{s}$, $p=0.038$). An error analysis of single-turn unified diffs revealed 0.0% patch application rates across all paradigms due to line drift (61.1%), indentation mismatch (22.2%), and missing hunk headers (16.7%), demonstrating that autonomous developer agents strictly require interactive multi-turn repair environments (such as SWE-agent) rather than single-turn diff generation.
+In 18 Vertex AI inferences on `google/gemma-4-31b-it`, MR-AST delivered a **-28.3%** latency speedup (7.57s vs 10.55s, p = 0.038). An error analysis of single-turn unified diffs revealed 0.0% patch application rates across all paradigms due to line drift (61.1%), indentation mismatch (22.2%), and missing hunk headers (16.7%), demonstrating that autonomous developer agents strictly require interactive multi-turn repair environments (such as SWE-agent) rather than single-turn diff generation.
 
 ![Figure 5: Solver Latency & Scaling](gallery_5_solver_scaling.png)
 
-Pure solver micro-benchmarks show the HiGHS branch-and-cut solver scales sub-linearly with $3.5\times$ to $20.8\times$ speedups over Python loops with 0% gap, compiling working memory in $23.7\text{ ms}$.
+Pure solver micro-benchmarks show the HiGHS branch-and-cut solver scales sub-linearly with **3.5x to 20.8x** speedups over Python loops with 0% optimality gap, compiling working memory in 23.7 ms.
 
 ---
 
@@ -208,7 +209,7 @@ The complete 8-page publication manuscript (`paper/final_submission_candidate.pd
 1. **Replication Notebook**: Open `notebooks/mrast_quickstart_and_replication.ipynb` to inspect and reproduce Table 2 metrics in under 30 seconds.
 2. **CLI Quickstart**:
 ```bash
-git clone https://github.com/anonymous/mr-ast.git
+git clone https://github.com/gautamhardik/mr-ast.git
 cd mr-ast
 pip install -r requirements-lock.txt
 pytest
