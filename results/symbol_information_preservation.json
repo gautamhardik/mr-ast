@@ -1,0 +1,98 @@
+{
+  "2000": {
+    "scoped_bm25": {
+      "total_symbols": 12.55,
+      "full_implementations": 12.55,
+      "skeletons": 0.0,
+      "stubs": 0.0,
+      "estimated_impl_tokens": 1192.3,
+      "estimated_signature_tokens": 251.0,
+      "estimated_structural_overhead": 67.8,
+      "gold_recall": 0.3728
+    },
+    "mrtopos_milp": {
+      "total_symbols": 50.85,
+      "full_implementations": 19.47,
+      "skeletons": 30.0,
+      "stubs": 1.39,
+      "estimated_impl_tokens": 1849.2,
+      "estimated_signature_tokens": 1289.3,
+      "estimated_structural_overhead": 45.9,
+      "gold_recall": 0.4846,
+      "full_implementation_ratio": 1.55,
+      "impl_token_ratio": 1.55
+    }
+  },
+  "4000": {
+    "scoped_bm25": {
+      "total_symbols": 19.98,
+      "full_implementations": 19.98,
+      "skeletons": 0.0,
+      "stubs": 0.0,
+      "estimated_impl_tokens": 1898.5,
+      "estimated_signature_tokens": 399.7,
+      "estimated_structural_overhead": 107.9,
+      "gold_recall": 0.4282
+    },
+    "mrtopos_milp": {
+      "total_symbols": 55.15,
+      "full_implementations": 32.5,
+      "skeletons": 22.11,
+      "stubs": 0.53,
+      "estimated_impl_tokens": 3087.9,
+      "estimated_signature_tokens": 1313.3,
+      "estimated_structural_overhead": 67.7,
+      "gold_recall": 0.5408,
+      "full_implementation_ratio": 1.63,
+      "impl_token_ratio": 1.63
+    }
+  },
+  "8000": {
+    "scoped_bm25": {
+      "total_symbols": 33.09,
+      "full_implementations": 33.09,
+      "skeletons": 0.0,
+      "stubs": 0.0,
+      "estimated_impl_tokens": 3143.8,
+      "estimated_signature_tokens": 661.9,
+      "estimated_structural_overhead": 178.7,
+      "gold_recall": 0.5555
+    },
+    "mrtopos_milp": {
+      "total_symbols": 58.29,
+      "full_implementations": 44.53,
+      "skeletons": 13.33,
+      "stubs": 0.43,
+      "estimated_impl_tokens": 4230.1,
+      "estimated_signature_tokens": 1290.5,
+      "estimated_structural_overhead": 91.2,
+      "gold_recall": 0.552,
+      "full_implementation_ratio": 1.35,
+      "impl_token_ratio": 1.35
+    }
+  },
+  "16000": {
+    "scoped_bm25": {
+      "total_symbols": 47.76,
+      "full_implementations": 47.76,
+      "skeletons": 0.0,
+      "stubs": 0.0,
+      "estimated_impl_tokens": 4537.2,
+      "estimated_signature_tokens": 955.2,
+      "estimated_structural_overhead": 257.9,
+      "gold_recall": 0.5961
+    },
+    "mrtopos_milp": {
+      "total_symbols": 59.9,
+      "full_implementations": 53.6,
+      "skeletons": 5.98,
+      "stubs": 0.32,
+      "estimated_impl_tokens": 5091.7,
+      "estimated_signature_tokens": 1251.5,
+      "estimated_structural_overhead": 108.8,
+      "gold_recall": 0.5705,
+      "full_implementation_ratio": 1.12,
+      "impl_token_ratio": 1.12
+    }
+  }
+}

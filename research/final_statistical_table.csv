@@ -1,0 +1,25 @@
+budget,step_transition,architectural_mechanism,mean_delta_pp,ci_lower_pp,ci_upper_pp,effect_size_cohens_dz,paired_t_stat,raw_p_value,holm_adjusted_p_value,is_significant_holm_05
+2000,A_scoped_bm25 -> B_mr_only,A -> B: Multi-Resolution Representation,16.61,8.46,24.75,0.3553,4.0358,9.307720447900654e-05,0.000558,True
+2000,B_mr_only -> C_mr_containment,B -> C: AST Precedence Containment,-5.43,-9.19,-1.67,-0.2515,-2.8566,0.004998986672130588,0.024995,True
+2000,C_mr_containment -> D_mr_containment_dep,C -> D: Topological Dependency Scoring,0.0,0.0,0.0,0.0,0.0,1.0,1.0,False
+2000,D_mr_containment_dep -> E_mrtopos_con_greedy,D -> E: Greedy Context Packing,-1.16,-2.87,0.55,-0.1185,-1.3459,0.1807288374728964,0.542187,False
+2000,E_mrtopos_con_greedy -> F_mrtopos_milp,E -> F: Exact MILP vs Greedy,1.16,-0.55,2.87,0.1185,1.3459,0.1807288374728964,0.542187,False
+2000,A_scoped_bm25 -> F_mrtopos_milp,A -> F: Total Net MR-TopoS Advantage,11.18,2.58,19.78,0.2265,2.5722,0.01124642458863048,0.044986,True
+4000,A_scoped_bm25 -> B_mr_only,A -> B: Multi-Resolution Representation,13.07,6.77,19.37,0.3615,4.1056,7.137385635654797e-05,0.000428,True
+4000,B_mr_only -> C_mr_containment,B -> C: AST Precedence Containment,-1.55,-3.32,0.21,-0.1533,-1.7413,0.08403548920069744,0.168071,False
+4000,C_mr_containment -> D_mr_containment_dep,C -> D: Topological Dependency Scoring,-0.26,-0.77,0.25,-0.088,-1.0,0.31919720716993677,0.319197,False
+4000,D_mr_containment_dep -> E_mrtopos_con_greedy,D -> E: Greedy Context Packing,-4.69,-8.37,-1.01,-0.2219,-2.5201,0.012962515460905375,0.05185,False
+4000,E_mrtopos_con_greedy -> F_mrtopos_milp,E -> F: Exact MILP vs Greedy,4.69,1.01,8.37,0.2219,2.5201,0.012962515460905375,0.05185,False
+4000,A_scoped_bm25 -> F_mrtopos_milp,A -> F: Total Net MR-TopoS Advantage,11.26,5.18,17.35,0.3223,3.6611,0.0003660358442321443,0.00183,True
+8000,A_scoped_bm25 -> B_mr_only,A -> B: Multi-Resolution Representation,1.12,-3.06,5.3,0.0467,0.5308,0.5964981685794983,1.0,False
+8000,B_mr_only -> C_mr_containment,B -> C: AST Precedence Containment,-1.47,-3.23,0.29,-0.1453,-1.6504,0.10131239127944962,0.607874,False
+8000,C_mr_containment -> D_mr_containment_dep,C -> D: Topological Dependency Scoring,0.0,0.0,0.0,0.0,0.0,1.0,1.0,False
+8000,D_mr_containment_dep -> E_mrtopos_con_greedy,D -> E: Greedy Context Packing,0.11,-0.11,0.33,0.088,1.0,0.3191972071699369,1.0,False
+8000,E_mrtopos_con_greedy -> F_mrtopos_milp,E -> F: Exact MILP vs Greedy,-0.11,-0.33,0.11,-0.088,-1.0,0.3191972071699369,1.0,False
+8000,A_scoped_bm25 -> F_mrtopos_milp,A -> F: Total Net MR-TopoS Advantage,-0.35,-4.13,3.44,-0.016,-0.1815,0.8562601819973968,1.0,False
+16000,A_scoped_bm25 -> B_mr_only,A -> B: Multi-Resolution Representation,-2.55,-6.29,1.19,-0.119,-1.3512,0.17901752222412354,1.0,False
+16000,B_mr_only -> C_mr_containment,B -> C: AST Precedence Containment,0.0,0.0,0.0,0.0,0.0,1.0,1.0,False
+16000,C_mr_containment -> D_mr_containment_dep,C -> D: Topological Dependency Scoring,0.0,0.0,0.0,0.0,0.0,1.0,1.0,False
+16000,D_mr_containment_dep -> E_mrtopos_con_greedy,D -> E: Greedy Context Packing,-0.39,-1.15,0.38,-0.088,-1.0,0.3191972071699369,1.0,False
+16000,E_mrtopos_con_greedy -> F_mrtopos_milp,E -> F: Exact MILP vs Greedy,0.39,-0.38,1.15,0.088,1.0,0.3191972071699369,1.0,False
+16000,A_scoped_bm25 -> F_mrtopos_milp,A -> F: Total Net MR-TopoS Advantage,-2.55,-6.29,1.19,-0.119,-1.3512,0.17901752222412354,1.0,False

@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CodeEmbeddingSchema",
+  "description": "Schema for swegemma pre-computed dense code AST embeddings in NumPy archive (.npz) format",
+  "type": "object",
+  "properties": {
+    "file_format": {
+      "type": "string",
+      "enum": [
+        "NumPy uncompressed/compressed zip archive (.npz)"
+      ]
+    },
+    "key_convention": {
+      "type": "string",
+      "description": "1-to-1 match with NetworkX graph node IDs (dotted symbol paths)"
+    },
+    "vector_dimensions": {
+      "type": "integer",
+      "enum": [
+        256
+      ]
+    },
+    "vector_dtype": {
+      "type": "string",
+      "enum": [
+        "float32"
+      ]
+    },
+    "metric": {
+      "type": "string",
+      "enum": [
+        "cosine_similarity"
+      ]
+    },
+    "normalization": {
+      "type": "string",
+      "description": "Unnormalized raw dense vectors; norms range from ~3.2 to 4.5; cosine similarity requires L2 norm division"
+    }
+  }
+}
+

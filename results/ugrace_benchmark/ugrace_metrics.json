@@ -1,0 +1,49 @@
+{
+  "overall": {
+    "task_count": 129,
+    "recall@1": 0.0,
+    "recall@5": 0.34108527131782945,
+    "recall@10": 0.4728682170542636,
+    "recall@20": 0.6356589147286822,
+    "mrr": 0.12209727534957614,
+    "mean_entropy": 0.98334621228406
+  },
+  "by_repo": {
+    "Textualize/rich": {
+      "task_count": 48,
+      "recall@1": 0.0,
+      "recall@5": 0.25,
+      "recall@10": 0.3541666666666667,
+      "recall@20": 0.6041666666666666,
+      "mrr": 0.11292236172968406,
+      "mean_entropy": 0.9931676475115276
+    },
+    "encode/httpx": {
+      "task_count": 1,
+      "recall@1": 0.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0,
+      "mrr": 0.25,
+      "mean_entropy": 0.9963649623171806
+    },
+    "fastapi/fastapi": {
+      "task_count": 67,
+      "recall@1": 0.0,
+      "recall@5": 0.34328358208955223,
+      "recall@10": 0.4925373134328358,
+      "recall@20": 0.582089552238806,
+      "mrr": 0.11324208360470046,
+      "mean_entropy": 0.9786690049669404
+    },
+    "psf/requests": {
+      "task_count": 13,
+      "recall@1": 0.0,
+      "recall@5": 0.6153846153846154,
+      "recall@10": 0.7692307692307693,
+      "recall@20": 1.0,
+      "mrr": 0.19177350427350426,
+      "mean_entropy": 0.9701866160760168
+    }
+  }
+}

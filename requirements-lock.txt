@@ -1,0 +1,10 @@
+# Exact pinned dependencies for MR-AST environment (Python 3.13.9)
+# Google Gemma 4 Developer Agent Paper Track (Kaggle Competition ID: 163111)
+
+transformers==5.9.0
+scipy==1.16.3
+rank_bm25==0.2.2
+matplotlib==3.10.6
+numpy==2.3.5
+pytest==8.4.2
+

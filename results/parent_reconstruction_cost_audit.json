@@ -1,0 +1,106 @@
+{
+  "audit_metadata": {
+    "command": "python scripts/audit_parent_reconstruction_costs.py",
+    "tasks_count": 129,
+    "budgets": [
+      2000,
+      4000,
+      8000,
+      16000
+    ],
+    "total_evaluations": 516,
+    "overall_budget_compliance_pct": 100.0,
+    "overall_syntax_validity_pct": 100.0
+  },
+  "reconstructed_parent_header_tokens": {
+    "count": 493,
+    "mean": 5.06,
+    "median": 5.0,
+    "std": 0.64,
+    "min": 4.0,
+    "p25": 4.5,
+    "p50": 5.0,
+    "p75": 5.5,
+    "p90": 6.0,
+    "max": 7.83
+  },
+  "shared_parent_deduplication": {
+    "total_method_parent_instances": 21809,
+    "total_unique_parents_emitted": 9585,
+    "total_redundant_headers_saved": 12224,
+    "global_macro_dedup_ratio_pct": 56.05,
+    "per_run_mean_pct": 43.39,
+    "per_run_median_pct": 45.45,
+    "per_run_std_pct": 23.11,
+    "per_run_p25_pct": 28.57,
+    "per_run_p50_pct": 45.45,
+    "per_run_p75_pct": 60.0,
+    "per_run_p90_pct": 73.39
+  },
+  "summary_by_budget": {
+    "2000": {
+      "estimated_mckp_cost_mean": 1995.29,
+      "estimated_mckp_cost_median": 1998.0,
+      "actual_serialized_tokens_mean": 1971.76,
+      "actual_serialized_tokens_median": 1987.0,
+      "layout_difference_mean": -23.53,
+      "layout_difference_median": -11.0,
+      "layout_difference_max": 47.0,
+      "selected_methods_mean": 12.47,
+      "orphaned_parents_mean": 5.68,
+      "reconstructed_header_tokens_mean": 27.59,
+      "trimmed_nodes_count_mean": 26.28,
+      "trimmed_nodes_count_max": 60,
+      "is_budget_compliant_pct": 100.0,
+      "syntax_valid_pct": 100.0
+    },
+    "4000": {
+      "estimated_mckp_cost_mean": 3995.27,
+      "estimated_mckp_cost_median": 3997.0,
+      "actual_serialized_tokens_mean": 3927.02,
+      "actual_serialized_tokens_median": 3983.0,
+      "layout_difference_mean": -68.25,
+      "layout_difference_median": -13.0,
+      "layout_difference_max": 8.0,
+      "selected_methods_mean": 23.53,
+      "orphaned_parents_mean": 9.57,
+      "reconstructed_header_tokens_mean": 45.81,
+      "trimmed_nodes_count_mean": 32.89,
+      "trimmed_nodes_count_max": 98,
+      "is_budget_compliant_pct": 100.0,
+      "syntax_valid_pct": 100.0
+    },
+    "8000": {
+      "estimated_mckp_cost_mean": 7997.59,
+      "estimated_mckp_cost_median": 7999.0,
+      "actual_serialized_tokens_mean": 7926.62,
+      "actual_serialized_tokens_median": 7983.0,
+      "layout_difference_mean": -70.97,
+      "layout_difference_median": -14.0,
+      "layout_difference_max": 5.0,
+      "selected_methods_mean": 48.57,
+      "orphaned_parents_mean": 18.2,
+      "reconstructed_header_tokens_mean": 86.67,
+      "trimmed_nodes_count_mean": 62.47,
+      "trimmed_nodes_count_max": 197,
+      "is_budget_compliant_pct": 100.0,
+      "syntax_valid_pct": 100.0
+    },
+    "16000": {
+      "estimated_mckp_cost_mean": 15998.36,
+      "estimated_mckp_cost_median": 15999.0,
+      "actual_serialized_tokens_mean": 15745.4,
+      "actual_serialized_tokens_median": 15976.0,
+      "layout_difference_mean": -252.96,
+      "layout_difference_median": -22.0,
+      "layout_difference_max": 7.0,
+      "selected_methods_mean": 84.5,
+      "orphaned_parents_mean": 23.44,
+      "reconstructed_header_tokens_mean": 111.11,
+      "trimmed_nodes_count_mean": 93.35,
+      "trimmed_nodes_count_max": 374,
+      "is_budget_compliant_pct": 100.0,
+      "syntax_valid_pct": 100.0
+    }
+  }
+}

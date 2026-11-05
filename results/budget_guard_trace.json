@@ -1,0 +1,65 @@
+{
+  "unconstrained_tokens": 89,
+  "target_budget": 40,
+  "prunable_sort_order": [
+    [
+      "mod.low_priority_helper",
+      "1",
+      2.0
+    ],
+    [
+      "mod.ParentClass",
+      "1",
+      10.0
+    ],
+    [
+      "mod.ParentClass.secondary_method",
+      "2",
+      25.0
+    ],
+    [
+      "mod.ParentClass.critical_method",
+      "3",
+      50.0
+    ]
+  ],
+  "trace_steps": [
+    {
+      "step": 1,
+      "target_symbol": "mod.low_priority_helper",
+      "action": "1 -> 0",
+      "tokens_after_step": 80,
+      "budget": 40,
+      "is_under_budget": false
+    },
+    {
+      "step": 2,
+      "target_symbol": "mod.ParentClass",
+      "action": "1 -> 0",
+      "tokens_after_step": 80,
+      "budget": 40,
+      "is_under_budget": false
+    },
+    {
+      "step": 3,
+      "target_symbol": "mod.ParentClass.secondary_method",
+      "action": "2 -> 1",
+      "tokens_after_step": 73,
+      "budget": 40,
+      "is_under_budget": false
+    },
+    {
+      "step": 4,
+      "target_symbol": "mod.ParentClass.critical_method",
+      "action": "3 -> 2",
+      "tokens_after_step": 42,
+      "budget": 40,
+      "is_under_budget": false
+    }
+  ],
+  "line_truncated": true,
+  "final_tokens": 39,
+  "is_budget_compliant": true,
+  "is_valid_ast": true,
+  "final_context_code": "# File: mod.py\nclass ParentClass:\n    def critical_method(self, x: int) -> int:\n        ...\n\n# [Context budget limit reached]\n"
+}

@@ -1,0 +1,88 @@
+{
+  "2000": {
+    "mean_raw_symbols": 12.512,
+    "mean_scoped_symbols": 12.55,
+    "mean_difference": -0.039,
+    "percent_difference": -0.31,
+    "tasks_raw_gt_scoped": 35,
+    "tasks_raw_eq_scoped": 74,
+    "tasks_raw_lt_scoped": 20,
+    "max_symbol_loss": 5,
+    "min_symbol_loss": -7,
+    "p25_diff": 0.0,
+    "p50_diff": 0.0,
+    "p75_diff": 1.0
+  },
+  "4000": {
+    "mean_raw_symbols": 20.202,
+    "mean_scoped_symbols": 19.984,
+    "mean_difference": 0.217,
+    "percent_difference": 1.074,
+    "tasks_raw_gt_scoped": 46,
+    "tasks_raw_eq_scoped": 64,
+    "tasks_raw_lt_scoped": 19,
+    "max_symbol_loss": 4,
+    "min_symbol_loss": -10,
+    "p25_diff": 0.0,
+    "p50_diff": 0.0,
+    "p75_diff": 1.0
+  },
+  "8000": {
+    "mean_raw_symbols": 33.442,
+    "mean_scoped_symbols": 33.093,
+    "mean_difference": 0.349,
+    "percent_difference": 1.043,
+    "tasks_raw_gt_scoped": 57,
+    "tasks_raw_eq_scoped": 55,
+    "tasks_raw_lt_scoped": 17,
+    "max_symbol_loss": 6,
+    "min_symbol_loss": -18,
+    "p25_diff": 0.0,
+    "p50_diff": 0.0,
+    "p75_diff": 1.0
+  },
+  "16000": {
+    "mean_raw_symbols": 48.031,
+    "mean_scoped_symbols": 47.76,
+    "mean_difference": 0.271,
+    "percent_difference": 0.565,
+    "tasks_raw_gt_scoped": 34,
+    "tasks_raw_eq_scoped": 84,
+    "tasks_raw_lt_scoped": 11,
+    "max_symbol_loss": 8,
+    "min_symbol_loss": -5,
+    "p25_diff": 0.0,
+    "p50_diff": 0.0,
+    "p75_diff": 1.0
+  },
+  "token_overhead_analysis": {
+    "sample_class_headers": [
+      "Request",
+      "Response",
+      "APIRoute",
+      "Console",
+      "Text",
+      "ProgressBar",
+      "Session",
+      "HTTPConnection"
+    ],
+    "overhead_tokens_per_class": [
+      5,
+      5,
+      7,
+      5,
+      5,
+      5,
+      5,
+      6
+    ],
+    "mean_overhead_tokens": 5.375,
+    "min_overhead_tokens": 5,
+    "max_overhead_tokens": 7
+  },
+  "pilot_9task_comparison": {
+    "pilot_raw_symbols": 22.78,
+    "pilot_scoped_symbols": 16.22,
+    "pilot_pct_loss": 28.78
+  }
+}

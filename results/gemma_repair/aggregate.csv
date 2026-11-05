@@ -1,0 +1,5 @@
+method,budget,num_tasks,mean_gold_file_coverage,syntactic_validity_rate,harness_test_patch_success_rate,harness_gold_patch_success_rate,model_execution_status
+bm25_raw,2000,8,0.875,0.0,1.0,1.0,HARDWARE_CONSTRAINED_NO_L4_GPU
+bm25_scoped,2000,8,0.625,1.0,1.0,1.0,HARDWARE_CONSTRAINED_NO_L4_GPU
+mrtopos_milp,2000,8,0.875,1.0,1.0,1.0,HARDWARE_CONSTRAINED_NO_L4_GPU
+

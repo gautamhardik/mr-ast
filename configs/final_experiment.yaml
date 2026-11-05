@@ -1,0 +1,71 @@
+# MR-TopoS: Master Experiment Configuration
+# Verified against Google Gemma 4 Developer Agent Paper Track
+
+experiment:
+  name: "mrtopos_master_benchmark"
+  version: "1.0.0"
+  date: "2026-11-05"
+  random_seed: 42
+  deterministic: true
+
+tokenizer:
+  model_id: "google/gemma-4-31B-it-qat-w4a16-ct"
+  local_path: "models/gemma4_tokenizer"
+  vocab_size: 262144
+  special_tokens:
+    channel_start: "<|channel>"
+    channel_end: "<channel|>"
+    tool_call: "<tool_call|>"
+    tool_response: "<tool_response|>"
+
+dataset:
+  tasks_path: "data/tasks.jsonl"
+  snapshots_dir: "data/snapshots"
+  total_tasks: 129
+  unique_base_commits: 127
+  repositories:
+    - name: "fastapi/fastapi"
+      tasks_count: 67
+    - name: "Textualize/rich"
+      tasks_count: 48
+    - name: "psf/requests"
+      tasks_count: 13
+    - name: "encode/httpx"
+      tasks_count: 1
+
+optimization:
+  solver: "HiGHS"
+  library: "scipy.optimize.milp"
+  budgets: [2000, 4000, 8000, 16000]
+  candidate_pool_size: 60
+  tier_multipliers:
+    EXCLUDED: 0.0
+    STUB: 0.2
+    SKELETON: 0.6
+    FULL: 1.0
+  lambda_topo: 0.5
+  gamma_slack: 5.0
+  causal_path:
+    max_hops: 2
+    call_decay: 0.75
+    import_decay: 0.40
+
+baselines:
+  - "full_file"
+  - "bm25_raw"
+  - "bm25_scoped"
+  - "mrtopos_con_greedy"
+  - "mrtopos_milp"
+
+hardware_boundary:
+  local_host:
+    os: "Windows 11"
+    python: "3.13.9"
+    accelerators: 0
+    role: "Context compilation, AST parsing, and test harness execution"
+  cluster_host:
+    role: "Gemma 4 31B W4A16 inference"
+    accelerators: "4x NVIDIA L4 (24GB) or 2x NVIDIA A100 (80GB)"
+    inference_engine: "vLLM 0.6+"
+    tensor_parallel_size: 4
+

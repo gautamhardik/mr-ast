@@ -1,0 +1,349 @@
+{
+  "pre_existing_vs_all": {
+    "total_tasks": 129,
+    "pre_only_tasks": 118,
+    "new_only_tasks": 1,
+    "mixed_tasks": 10,
+    "total_gold_refs": 278,
+    "total_pre_refs": 229,
+    "total_new_refs": 49
+  },
+  "information_preservation_table": {
+    "2000": {
+      "scoped_bm25": {
+        "total_symbols": 12.55,
+        "full_implementations": 12.55,
+        "skeletons": 0.0,
+        "stubs": 0.0,
+        "mean_serialized_tokens": 1990.8,
+        "gold_recall": 0.3728
+      },
+      "mrtopos_milp": {
+        "total_symbols": 50.85,
+        "full_implementations": 19.47,
+        "skeletons": 30.0,
+        "stubs": 1.39,
+        "mean_serialized_tokens": 1933.6,
+        "gold_recall": 0.4846,
+        "capacity_ratio": 4.05,
+        "full_ratio": 1.55
+      }
+    },
+    "4000": {
+      "scoped_bm25": {
+        "total_symbols": 19.98,
+        "full_implementations": 19.98,
+        "skeletons": 0.0,
+        "stubs": 0.0,
+        "mean_serialized_tokens": 3990.7,
+        "gold_recall": 0.4282
+      },
+      "mrtopos_milp": {
+        "total_symbols": 55.15,
+        "full_implementations": 32.5,
+        "skeletons": 22.11,
+        "stubs": 0.53,
+        "mean_serialized_tokens": 3727.1,
+        "gold_recall": 0.5408,
+        "capacity_ratio": 2.76,
+        "full_ratio": 1.63
+      }
+    },
+    "8000": {
+      "scoped_bm25": {
+        "total_symbols": 33.09,
+        "full_implementations": 33.09,
+        "skeletons": 0.0,
+        "stubs": 0.0,
+        "mean_serialized_tokens": 7860.4,
+        "gold_recall": 0.5555
+      },
+      "mrtopos_milp": {
+        "total_symbols": 58.29,
+        "full_implementations": 44.53,
+        "skeletons": 13.33,
+        "stubs": 0.43,
+        "mean_serialized_tokens": 6978.3,
+        "gold_recall": 0.552,
+        "capacity_ratio": 1.76,
+        "full_ratio": 1.35
+      }
+    },
+    "16000": {
+      "scoped_bm25": {
+        "total_symbols": 47.76,
+        "full_implementations": 47.76,
+        "skeletons": 0.0,
+        "stubs": 0.0,
+        "mean_serialized_tokens": 14318.6,
+        "gold_recall": 0.5961
+      },
+      "mrtopos_milp": {
+        "total_symbols": 59.9,
+        "full_implementations": 53.6,
+        "skeletons": 5.98,
+        "stubs": 0.32,
+        "mean_serialized_tokens": 12317.5,
+        "gold_recall": 0.5705,
+        "capacity_ratio": 1.25,
+        "full_ratio": 1.12
+      }
+    }
+  },
+  "per_repository_breakdown": {
+    "Textualize/rich": {
+      "2000": {
+        "task_count": 48,
+        "scoped_recall": 0.434,
+        "milp_recall": 0.5089,
+        "raw_recall": 0.434,
+        "full_recall": 0.1771,
+        "recall_diff": 0.0749,
+        "scoped_symbols": 11.06,
+        "milp_symbols": 51.62,
+        "milp_full": 15.15,
+        "milp_skel": 35.29,
+        "milp_stub": 1.19
+      },
+      "4000": {
+        "task_count": 48,
+        "scoped_recall": 0.4988,
+        "milp_recall": 0.6547,
+        "raw_recall": 0.4988,
+        "full_recall": 0.1771,
+        "recall_diff": 0.1559,
+        "scoped_symbols": 17.44,
+        "milp_symbols": 57.23,
+        "milp_full": 27.29,
+        "milp_skel": 29.27,
+        "milp_stub": 0.67
+      },
+      "8000": {
+        "task_count": 48,
+        "scoped_recall": 0.662,
+        "milp_recall": 0.6779,
+        "raw_recall": 0.662,
+        "full_recall": 0.2188,
+        "recall_diff": 0.0158,
+        "scoped_symbols": 32.17,
+        "milp_symbols": 59.1,
+        "milp_full": 43.15,
+        "milp_skel": 15.52,
+        "milp_stub": 0.44
+      },
+      "16000": {
+        "task_count": 48,
+        "scoped_recall": 0.6837,
+        "milp_recall": 0.6883,
+        "raw_recall": 0.6837,
+        "full_recall": 0.3125,
+        "recall_diff": 0.0046,
+        "scoped_symbols": 44.54,
+        "milp_symbols": 59.98,
+        "milp_full": 52.88,
+        "milp_skel": 7.1,
+        "milp_stub": 0.0
+      }
+    },
+    "encode/httpx": {
+      "2000": {
+        "task_count": 1,
+        "scoped_recall": 0.0,
+        "milp_recall": 0.0,
+        "raw_recall": 0.0,
+        "full_recall": 0.0,
+        "recall_diff": 0.0,
+        "scoped_symbols": 7.0,
+        "milp_symbols": 51.0,
+        "milp_full": 24.0,
+        "milp_skel": 26.0,
+        "milp_stub": 1.0
+      },
+      "4000": {
+        "task_count": 1,
+        "scoped_recall": 0.0,
+        "milp_recall": 0.0,
+        "raw_recall": 0.0,
+        "full_recall": 0.0,
+        "recall_diff": 0.0,
+        "scoped_symbols": 6.0,
+        "milp_symbols": 59.0,
+        "milp_full": 38.0,
+        "milp_skel": 20.0,
+        "milp_stub": 1.0
+      },
+      "8000": {
+        "task_count": 1,
+        "scoped_recall": 0.0,
+        "milp_recall": 0.0,
+        "raw_recall": 0.0,
+        "full_recall": 0.0,
+        "recall_diff": 0.0,
+        "scoped_symbols": 13.0,
+        "milp_symbols": 59.0,
+        "milp_full": 53.0,
+        "milp_skel": 6.0,
+        "milp_stub": 0.0
+      },
+      "16000": {
+        "task_count": 1,
+        "scoped_recall": 0.0,
+        "milp_recall": 0.0,
+        "raw_recall": 0.0,
+        "full_recall": 0.0,
+        "recall_diff": 0.0,
+        "scoped_symbols": 58.0,
+        "milp_symbols": 60.0,
+        "milp_full": 59.0,
+        "milp_skel": 1.0,
+        "milp_stub": 0.0
+      }
+    },
+    "fastapi/fastapi": {
+      "2000": {
+        "task_count": 67,
+        "scoped_recall": 0.4069,
+        "milp_recall": 0.5684,
+        "raw_recall": 0.3658,
+        "full_recall": 0.116,
+        "recall_diff": 0.1616,
+        "scoped_symbols": 13.72,
+        "milp_symbols": 51.09,
+        "milp_full": 23.82,
+        "milp_skel": 26.24,
+        "milp_stub": 1.03
+      },
+      "4000": {
+        "task_count": 67,
+        "scoped_recall": 0.467,
+        "milp_recall": 0.5722,
+        "raw_recall": 0.4857,
+        "full_recall": 0.121,
+        "recall_diff": 0.1051,
+        "scoped_symbols": 21.75,
+        "milp_symbols": 53.97,
+        "milp_full": 36.97,
+        "milp_skel": 16.91,
+        "milp_stub": 0.09
+      },
+      "8000": {
+        "task_count": 67,
+        "scoped_recall": 0.5952,
+        "milp_recall": 0.5771,
+        "raw_recall": 0.5653,
+        "full_recall": 0.1647,
+        "recall_diff": -0.018,
+        "scoped_symbols": 33.46,
+        "milp_symbols": 57.6,
+        "milp_full": 45.45,
+        "milp_skel": 11.84,
+        "milp_stub": 0.31
+      },
+      "16000": {
+        "task_count": 67,
+        "scoped_recall": 0.6579,
+        "milp_recall": 0.6054,
+        "raw_recall": 0.6408,
+        "full_recall": 0.2257,
+        "recall_diff": -0.0525,
+        "scoped_symbols": 48.21,
+        "milp_symbols": 59.82,
+        "milp_full": 53.07,
+        "milp_skel": 6.18,
+        "milp_stub": 0.57
+      }
+    },
+    "psf/requests": {
+      "2000": {
+        "task_count": 13,
+        "scoped_recall": 0.0,
+        "milp_recall": 0.0,
+        "raw_recall": 0.0,
+        "full_recall": 0.0,
+        "recall_diff": 0.0,
+        "scoped_symbols": 12.46,
+        "milp_symbols": 46.77,
+        "milp_full": 12.62,
+        "milp_skel": 30.15,
+        "milp_stub": 4.0
+      },
+      "4000": {
+        "task_count": 13,
+        "scoped_recall": 0.0,
+        "milp_recall": 0.0,
+        "raw_recall": 0.0,
+        "full_recall": 0.0,
+        "recall_diff": 0.0,
+        "scoped_symbols": 21.38,
+        "milp_symbols": 53.23,
+        "milp_full": 28.31,
+        "milp_skel": 22.62,
+        "milp_stub": 2.31
+      },
+      "8000": {
+        "task_count": 13,
+        "scoped_recall": 0.0,
+        "milp_recall": 0.0,
+        "raw_recall": 0.0,
+        "full_recall": 0.0,
+        "recall_diff": 0.0,
+        "scoped_symbols": 36.15,
+        "milp_symbols": 58.77,
+        "milp_full": 44.23,
+        "milp_skel": 13.54,
+        "milp_stub": 1.0
+      },
+      "16000": {
+        "task_count": 13,
+        "scoped_recall": 0.0,
+        "milp_recall": 0.0,
+        "raw_recall": 0.0,
+        "full_recall": 0.0,
+        "recall_diff": 0.0,
+        "scoped_symbols": 56.54,
+        "milp_symbols": 60.0,
+        "milp_full": 58.54,
+        "milp_skel": 1.23,
+        "milp_stub": 0.23
+      }
+    }
+  },
+  "formal_scope_tax": {
+    "2000": {
+      "tasks_with_symbol_loss": 35,
+      "max_symbol_loss": 5.0,
+      "mean_symbol_loss": -0.039,
+      "raw_mean_recall": 0.3515,
+      "scoped_mean_recall": 0.3728,
+      "raw_mean_symbols": 12.51,
+      "scoped_mean_symbols": 12.55
+    },
+    "4000": {
+      "tasks_with_symbol_loss": 46,
+      "max_symbol_loss": 4.0,
+      "mean_symbol_loss": 0.217,
+      "raw_mean_recall": 0.4379,
+      "scoped_mean_recall": 0.4282,
+      "raw_mean_symbols": 20.2,
+      "scoped_mean_symbols": 19.98
+    },
+    "8000": {
+      "tasks_with_symbol_loss": 57,
+      "max_symbol_loss": 6.0,
+      "mean_symbol_loss": 0.349,
+      "raw_mean_recall": 0.54,
+      "scoped_mean_recall": 0.5555,
+      "raw_mean_symbols": 33.44,
+      "scoped_mean_symbols": 33.09
+    },
+    "16000": {
+      "tasks_with_symbol_loss": 34,
+      "max_symbol_loss": 8.0,
+      "mean_symbol_loss": 0.271,
+      "raw_mean_recall": 0.5872,
+      "scoped_mean_recall": 0.5961,
+      "raw_mean_symbols": 48.03,
+      "scoped_mean_symbols": 47.76
+    }
+  }
+}

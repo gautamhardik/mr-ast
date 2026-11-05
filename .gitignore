@@ -1,0 +1,35 @@
+# Large benchmark data and raw repository checkouts
+DATA/
+data/
+
+# Agent and temporary workspaces
+.agent/
+.agents/
+.gsd/
+.planning/
+.gemini/
+scratch/
+chrome_temp_profile/
+
+# Cache directories
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local credentials
+.env
+
+# Archives and build artifacts
+*.zip
+*.tar.gz
+*.egg-info/
+dist/
+build/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

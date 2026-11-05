@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>final_submission_candidate</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  
+      <style>
+      @page {
+          size: letter;
+          margin: 0.82in;
+      }
+      body {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+          font-size: 10.5pt;
+          line-height: 1.38;
+          color: #24292e;
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 5px;
+      }
+      h1 {
+          font-size: 17pt;
+          border-bottom: 2px solid #eaecef;
+          padding-bottom: 0.3em;
+          margin-top: 0;
+          page-break-after: avoid;
+      }
+      h2 {
+          font-size: 13.5pt;
+          border-bottom: 1px solid #eaecef;
+          padding-bottom: 0.3em;
+          margin-top: 1.1em;
+          page-break-after: avoid;
+      }
+      h3 {
+          font-size: 11.5pt;
+          margin-top: 0.9em;
+          page-break-after: avoid;
+      }
+      table {
+          border-collapse: collapse;
+          width: 100%;
+          margin: 0.8em 0;
+          font-size: 8.2pt;
+          page-break-inside: avoid;
+      }
+      th, td {
+          border: 1px solid #dfe2e5;
+          padding: 3px 4px;
+          text-align: left;
+      }
+      th {
+          background-color: #f6f8fa;
+          font-weight: 600;
+      }
+      tr:nth-child(even) {
+          background-color: #fafbfc;
+      }
+      code {
+          background-color: rgba(27,31,35,0.05);
+          border-radius: 3px;
+          font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+          font-size: 85%;
+          padding: 0.2em 0.4em;
+      }
+      pre {
+          background-color: #f6f8fa;
+          border-radius: 3px;
+          font-size: 85%;
+          line-height: 1.35;
+          overflow: auto;
+          padding: 8px;
+          page-break-inside: avoid;
+      }
+      blockquote {
+          border-left: 0.25em solid #0366d6;
+          background-color: #f6f8fa;
+          color: #24292e;
+          padding: 6px 12px;
+          margin: 0.6em 0;
+          page-break-inside: avoid;
+      }
+      hr {
+          border: 0;
+          border-top: 1px solid #eaecef;
+          margin: 12px 0;
+      }
+      </style>
+      
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1
+id="multi-resolution-ast-context-selection-for-budget-constrained-software-engineering-agents">Multi-Resolution
+AST Context Selection for Budget-Constrained Software Engineering
+Agents</h1>
+<p><strong>Anonymous Authors</strong><br />
+<em>Paper Track Submission — Google Gemma 4 Developer Agent Track
+(Kaggle Competition ID: 163111)</em></p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>Software engineering agents face strict token limits. Whole-file
+retrieval exhausts capacity, snippet extraction induces syntax errors in
+24.8% of cases, and monolithic parent stubs cap capacity at ~12.5
+symbols at <span class="math inline">\(B = 2,000\)</span> tokens. We
+propose <strong>MR-AST</strong>, formulating context selection as a
+<strong>Multiple-Choice Knapsack Problem (MCKP)</strong>. Discrete
+resolution tiers (Full, Skeleton, Stub) across budget-scaled pools
+(<span class="math inline">\(K_{\text{step}}(B)\)</span>) expand symbol
+capacity while preserving syntax via Invariant 1 (median 5.0 tokens per
+class). Across 129 SWE tasks (5,160 runs), MR-AST yields <span
+class="math inline">\(+16.61\text{ pp}\)</span> recall at <span
+class="math inline">\(2\text{k}\)</span> (<span
+class="math inline">\(p_{\text{Holm}} = 0.0006\)</span>), retains
+<strong><span class="math inline">\(1.55\times\)</span> more full
+implementations</strong>, and lifts retrospective commit-disjoint <span
+class="math inline">\(16\text{k}\)</span> recall to <strong><span
+class="math inline">\(76.92\%\)</span></strong> (<span
+class="math inline">\(+16.44\text{ pp}\)</span>, post-hoc <span
+class="math inline">\(p_{\text{Holm-12}} = 0.0043\)</span>), with
+exploratory prompt latency reductions in pilot trials (<span
+class="math inline">\(-28.3\%\)</span>, <span class="math inline">\(p =
+0.038\)</span>).</p>
+<hr />
+<h2 id="introduction-related-work">1. Introduction &amp; Related
+Work</h2>
+<p>Software engineering agents automate repository repair (Jimenez et
+al., 2024), but uncompressed contexts degrade attention under
+constrained budgets (Liu et al., 2024), while snippet retrieval induces
+syntax errors in 24.8% of cases.</p>
+<h3 id="positioning-relative-to-prior-art">Positioning Relative to Prior
+Art</h3>
+<ul>
+<li><strong>LocAgent (ACL 2025)</strong>: Explores code graphs via
+multi-turn queries (Chen et al., 2025); MR-AST compiles context offline
+in &lt;40 ms.</li>
+<li><strong>Aider Repository Map</strong>: Emits signature outlines via
+PageRank (Gauthier, 2024) for navigation (AST validity N/A); MR-AST
+compiles an integrated working memory unifying signatures and code in
+22–78 ms.</li>
+<li><strong>Context Compression</strong>: Prunes tokens via perplexity
+(Feng et al., 2026), breaking syntax; MR-AST enforces grammar-preserving
+AST transformations.</li>
+</ul>
+<h3 id="contributions">Contributions</h3>
+<ul>
+<li><strong>Multi-Resolution Representation</strong>: Discrete Full,
+Skeleton, and Stub tiers deliver <strong><span
+class="math inline">\(+16.61\text{ pp}\)</span></strong> recall at <span
+class="math inline">\(2\text{k}\)</span> (<span
+class="math inline">\(p_{\text{Holm}} = 0.0006\)</span>) and retain
+<strong><span class="math inline">\(1.55\times\)</span> more full
+implementations</strong>.</li>
+<li><strong>Pure MCKP Formulation</strong>: Removing knapsack precedence
+recovers <span class="math inline">\(+5.43\text{ pp}\)</span> recall at
+<span class="math inline">\(2\text{k}\)</span> (<span
+class="math inline">\(p = 0.0050\)</span>), delegating structural
+closure to the serializer.</li>
+<li><strong>Dynamic Candidate Scaling</strong>: Scaling candidate depth
+(<span class="math inline">\(K_{\text{step}}(B)\)</span>) across 65
+commit-disjoint clusters lifts <span
+class="math inline">\(16\text{k}\)</span> recall to <strong><span
+class="math inline">\(76.92\%\)</span></strong> (<span
+class="math inline">\(+16.44\text{ pp}\)</span> over Scoped BM25,
+post-hoc <span class="math inline">\(p_{\text{Holm-12}} =
+0.0043\)</span>).</li>
+<li><strong>Syntactic Invariant</strong>: Invariant 1 guarantees syntax
+validity for supported Python ASTs under atomic pruning, eliminating
+line truncations.</li>
+</ul>
+<hr />
+<h2 id="theoretical-foundations-problem-formulation">2. Theoretical
+Foundations &amp; Problem Formulation</h2>
+<h3 id="repository-abstract-syntax-trees">2.1 Repository Abstract Syntax
+Trees</h3>
+<p>We model a repository as an AST forest <span
+class="math inline">\(\mathcal{T} = (\mathcal{V},
+\mathcal{E}_{\text{hier}})\)</span> with entities <span
+class="math inline">\(\mathcal{V}\)</span> (modules, classes, methods)
+and containment edges (<span class="math inline">\(\text{Module} \to
+\text{Class} \to \text{Method}\)</span>). Entities have at most one
+parent <span class="math inline">\(p(i)\)</span>; modules act as
+roots.</p>
+<h3 id="multi-resolution-representation-lattice">2.2 Multi-Resolution
+Representation Lattice</h3>
+<p>MR-AST formalizes context reduction as projection onto a 4-tier
+resolution lattice <span class="math inline">\(\mathcal{R} =
+\{\text{EXCLUDED} (0), \text{STUB} (1), \text{SKELETON} (2), \text{FULL}
+(3)\}\)</span>. For any block-scoped language, projection operators
+<span class="math inline">\(\pi_r(v)\)</span> satisfy monotonic token
+ordering: <span class="math inline">\(0 = c_{i0} &lt; c_{i1} \le c_{i2}
+\le c_{i3}\)</span>. In Python, Tier 3 retains complete source; Tier 2
+preserves signatures, type annotations, and docstrings with
+<code>...</code> suites; Tier 1 retains identifier headers; Tier 0 is
+omitted (<span class="math inline">\(\epsilon\)</span>). Token costs
+<span class="math inline">\(c_{ir}\)</span> are measured via the Gemma 4
+tokenizer.</p>
+<h3 id="multiple-choice-knapsack-problem-mckp">2.3 Multiple-Choice
+Knapsack Problem (MCKP)</h3>
+<p>Context compilation is formulated as an MCKP (Kellerer et al., 2004).
+Let candidate pool <span class="math inline">\(\mathcal{N}\)</span> have
+depth <span class="math inline">\(N = K_{\text{step}}(B)\)</span>.
+Binary variable <span class="math inline">\(x_{ir} \in \{0, 1\}\)</span>
+selects entity <span class="math inline">\(i\)</span> at tier <span
+class="math inline">\(r\)</span>. Utility is <span
+class="math inline">\(u_i = s_i\)</span> (BM25; call graphs add <span
+class="math inline">\(0.00\text{ pp}\)</span>). With weights <span
+class="math inline">\(\alpha_r \in \{0.0, 0.4, 0.7, 1.0\}\)</span>,
+compilation solves:</p>
+<p><span class="math display">\[\max_{\mathbf{x}} \sum_{i \in
+\mathcal{N}} \sum_{r \in \mathcal{R}} \alpha_r u_i x_{ir} \quad
+\text{s.t.} \quad \sum_{i \in \mathcal{N}} \sum_{r=1}^3 c_{ir} x_{ir}
+\le B, \quad \sum_{r \in \mathcal{R}} x_{ir} = 1, \quad x_{ir} \in \{0,
+1\}\]</span></p>
+<h3 id="removal-of-knapsack-precedence-constraints">2.4 Removal of
+Knapsack Precedence Constraints</h3>
+<p>Enforcing knapsack precedence reduces recall by <span
+class="math inline">\(-5.43\text{ pp}\)</span> at <span
+class="math inline">\(2\text{k}\)</span> (<span class="math inline">\(p
+= 0.0050\)</span>). MR-AST <strong>removes precedence from
+optimization</strong>, delegating structural closure to serializer <span
+class="math inline">\(\mathcal{C}(\mathbf{x})\)</span>.</p>
+<h3 id="solver-delineation-algorithmic-complexity">2.5 Solver
+Delineation &amp; Algorithmic Complexity</h3>
+<ol type="1">
+<li><strong>Constraint-Aware Greedy (Production)</strong>: Sorts <span
+class="math inline">\(3N\)</span> upgrade steps by gradient <span
+class="math inline">\(\rho = \Delta u / \Delta c\)</span> in <span
+class="math inline">\(O(N \log N)\)</span> time.</li>
+<li><strong>HiGHS Solver (Exact Reference)</strong>: Solves MCKP via
+branch-and-cut (Huangfu &amp; Hall, 2018) with 0.0% optimality gap,
+yielding recall matching greedy (<span class="math inline">\(p \ge
+0.18\)</span>).</li>
+</ol>
+<hr />
+<h2 id="methodology-architecture">3. Methodology &amp; Architecture</h2>
+<h3 id="candidate-depth-schedule-k_textstepb">3.1 Candidate-Depth
+Schedule <span class="math inline">\(K_{\text{step}}(B)\)</span></h3>
+<p>Full-corpus sweeps across all 129 tasks showed small pools (<span
+class="math inline">\(K=60\)</span>) starve at <span
+class="math inline">\(16\text{k}\)</span>, while large pools (<span
+class="math inline">\(K=400\)</span>) scatter tokens at <span
+class="math inline">\(2\text{k}\)</span>. MR-AST couples candidate depth
+to budget:</p>
+<p><span class="math display">\[K_{\text{step}}(B) = \begin{cases} 60
+&amp; \text{for } B = 2,000 \\ 100 &amp; \text{for } B = 4,000 \\ 200
+&amp; \text{for } B = 8,000 \\ 400 &amp; \text{for } B = 16,000
+\end{cases}\]</span></p>
+<h3 id="context-composition-operator-mathcalcmathbfx">3.2 Context
+Composition Operator <span
+class="math inline">\(\mathcal{C}(\mathbf{x})\)</span></h3>
+<p>Context is compiled via AST operator <span
+class="math inline">\(\mathcal{C}(\mathbf{x})\)</span>: 1. <strong>File
+Grouping</strong>: Active symbols <span
+class="math inline">\(\mathcal{S}^* = \{s_i \mid x_{ir}=1, r \ge
+1\}\)</span> group by file path. 2. <strong>Shared-Parent
+Reconstruction</strong>: Emits enclosing <code>class C:</code> headers
+with 4-space indentation. If omitted by the optimizer (<span
+class="math inline">\(x_{C0}=1\)</span>), headers are reconstructed
+post-hoc at median cost 5.0 tokens, achieving a <strong><span
+class="math inline">\(56.05\%\)</span> pooled deduplication
+rate</strong> and eliminating 12,224 redundant definitions across 493
+reconstructed method runs.</p>
+<h3 id="invariant-1-implementation-scoped-syntactic-invariant">Invariant
+1 (Implementation-Scoped Syntactic Invariant)</h3>
+<blockquote>
+<p><em>Let <span class="math inline">\(\mathcal{G} = (\mathcal{V},
+\mathcal{E})\)</span> be an AST graph from a valid Python snapshot with
+supported constructs (<code>ClassDef</code>, <code>FunctionDef</code>,
+<code>AsyncFunctionDef</code>, <code>Assign</code>). For any tier vector
+<span class="math inline">\(\mathbf{x} \in \{0, 1\}^{N \times
+|\mathcal{R}|}\)</span> and budget <span class="math inline">\(B \ge
+T_{\min}\)</span> (<span class="math inline">\(T_{\min} = 0\)</span> is
+the empty scaffold base case; <code># File:</code> headers are
+comments), serializer <span
+class="math inline">\(\mathcal{C}(\mathbf{x})\)</span> provides an
+implementation-scoped guarantee that <span
+class="math inline">\(\text{ast.parse}(\mathcal{C}(\mathbf{x})) \neq
+\text{ SyntaxError}\)</span> and <span
+class="math inline">\(\text{Tokenizer}(\mathcal{C}(\mathbf{x})) \le
+B\)</span> under four operational conditions: (1) monotonic tier
+demotions (<span class="math inline">\(3 \to 2 \to 1 \to 0\)</span>) and
+atomic symbol pruning terminate in <span class="math inline">\(\le
+3N\)</span> steps; (2) total symbol exclusion reaches the empty scaffold
+(<span class="math inline">\(T_{\min} \le B\)</span>); (3) nested
+methods retain 4-space indentation with <code>...</code> suites; and (4)
+budget guard and evaluator share the identical Gemma 4
+tokenizer.</em></p>
+</blockquote>
+<h3 id="multi-stage-monotonic-atomic-symbol-pruning">3.3 Multi-Stage
+Monotonic Atomic Symbol Pruning</h3>
+<p>Because layout adds non-linear tokens (<span
+class="math inline">\(27.6\)</span> to <span
+class="math inline">\(111.1\)</span> tokens on average), the optimizer
+uses an additive surrogate. While the legacy serializer was evaluated
+across 5,160 runs (99.46% syntax validity with 28 truncations under
+high-<span class="math inline">\(K\)</span> sweeps), atomic symbol
+pruning was verified on a 516-run audit (achieving <strong>100.0% syntax
+validity</strong>, resolving 28 historical truncations without line
+slicing).</p>
+<hr />
+<h2 id="experimental-setup-benchmark-corpus">4. Experimental Setup &amp;
+Benchmark Corpus</h2>
+<h3 id="benchmark-corpus-partitions">4.1 Benchmark Corpus &amp;
+Partitions</h3>
+<p>We evaluate MR-AST on 129 SWE-bench Lite tasks across four
+repositories: <code>fastapi</code> (67), <code>rich</code> (48),
+<code>requests</code> (13), and <code>httpx</code> (1), modifying 278
+files (229 pre-existing, 49 patch-created). <strong>Chronology &amp;
+Partitions</strong>: Factorial sweeps (<span class="math inline">\(K \in
+[60, 400]\)</span>) across all 129 tasks characterized candidate
+saturation. Tasks were subsequently partitioned by git
+<code>base_commit</code> (127 clusters) into a 63-task dev set (62
+clusters) and a retrospective commit-disjoint 66-task evaluation set (65
+clusters, zero base-commit overlap); dev set did not independently
+discover the schedule. A zero-leakage 2-fold cross-validation confirmed
+policy stability: fitting <span class="math inline">\(K(B)\)</span> on
+62 clusters and testing on 65 clusters (and vice-versa) independently
+selected identical expanding schedules (<span class="math inline">\(K
+\in [60, 400]\)</span>), yielding out-of-fold recall parity (76.47% and
+76.92% at 16k).</p>
+<h3 id="token-budgets-target-tokenizer">4.2 Token Budgets &amp; Target
+Tokenizer</h3>
+<p>We evaluate budgets <span class="math inline">\(B \in \{2,000, 4,000,
+8,000, 16,000\}\)</span> against local Gemma 4 tokenizer artifact
+<code>models/gemma4_tokenizer/tokenizer.json</code> (SHA-256:
+<code>cc8d3a0ce3...</code>, 262,144 BPE vocabulary).</p>
+<h3 id="baseline-architectures-source-paths">4.3 Baseline Architectures
+&amp; Source Paths</h3>
+<p>MR-AST is implemented in <code>src/mrtopos/</code> with baselines in
+<code>src/retrieval/</code>: 1. <strong><code>full_file</code></strong>:
+Full files via BM25 (<code>lexical_index.py</code>). 2.
+<strong><code>bm25_scoped</code></strong>: Snippets in class stubs
+(<code>lexical_index.py</code>). 3.
+<strong><code>aider_repomap</code></strong>: PageRank outline packing
+(<code>aider_repomap.py</code>). 4.
+<strong><code>mr_ast_greedy</code></strong>: Greedy MCKP selector in
+<span class="math inline">\(O(N \log N)\)</span> time
+(<code>knapsack_solver.py</code>). 5.
+<strong><code>mr_ast_milp</code></strong>: Exact HiGHS solver with 0%
+gap (<code>knapsack_solver.py</code>).</p>
+<hr />
+<h2 id="results-empirical-analysis">5. Results &amp; Empirical
+Analysis</h2>
+<h3 id="factorial-ablation-across-token-budgets">5.1 Factorial Ablation
+Across Token Budgets</h3>
+<p>Table 1 reports master factorial results across 129 tasks (5,160
+runs, 100% budget compliance):</p>
+<p><strong>Table 1: Master Factorial Benchmark Results Across 129 SWE
+Tasks</strong></p>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th>Method</th>
+<th>Budget</th>
+<th style="text-align: center;">Gold Recall (All)</th>
+<th style="text-align: center;">Pre-Exist Recall</th>
+<th style="text-align: center;">Retained Syms</th>
+<th style="text-align: center;">Full Impls</th>
+<th style="text-align: center;">Skeletons</th>
+<th style="text-align: center;">Syntax Valid %</th>
+<th style="text-align: center;">Solve Time (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>full_file</strong></td>
+<td>2k</td>
+<td style="text-align: center;">0.1262</td>
+<td style="text-align: center;">0.1315</td>
+<td style="text-align: center;">59.05</td>
+<td style="text-align: center;">59.05</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">41.9%</td>
+<td style="text-align: center;">133.31</td>
+</tr>
+<tr>
+<td></td>
+<td>4k</td>
+<td style="text-align: center;">0.1287</td>
+<td style="text-align: center;">0.1341</td>
+<td style="text-align: center;">64.12</td>
+<td style="text-align: center;">64.12</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">62.8%</td>
+<td style="text-align: center;">196.21</td>
+</tr>
+<tr>
+<td></td>
+<td>8k</td>
+<td style="text-align: center;">0.1669</td>
+<td style="text-align: center;">0.1739</td>
+<td style="text-align: center;">77.91</td>
+<td style="text-align: center;">77.91</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">65.9%</td>
+<td style="text-align: center;">262.84</td>
+</tr>
+<tr>
+<td></td>
+<td>16k</td>
+<td style="text-align: center;">0.2335</td>
+<td style="text-align: center;">0.2432</td>
+<td style="text-align: center;">109.37</td>
+<td style="text-align: center;">109.37</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">72.9%</td>
+<td style="text-align: center;">389.95</td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td><strong>bm25_scoped</strong></td>
+<td>2k</td>
+<td style="text-align: center;">0.3728</td>
+<td style="text-align: center;">0.4362</td>
+<td style="text-align: center;">12.55</td>
+<td style="text-align: center;">12.55</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">75.2%</td>
+<td style="text-align: center;">127.01</td>
+</tr>
+<tr>
+<td></td>
+<td>4k</td>
+<td style="text-align: center;">0.4282</td>
+<td style="text-align: center;">0.5011</td>
+<td style="text-align: center;">19.98</td>
+<td style="text-align: center;">19.98</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">66.7%</td>
+<td style="text-align: center;">158.82</td>
+</tr>
+<tr>
+<td></td>
+<td>8k</td>
+<td style="text-align: center;">0.5555</td>
+<td style="text-align: center;">0.6481</td>
+<td style="text-align: center;">33.09</td>
+<td style="text-align: center;">33.09</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">77.5%</td>
+<td style="text-align: center;">244.59</td>
+</tr>
+<tr>
+<td></td>
+<td>16k</td>
+<td style="text-align: center;">0.5961</td>
+<td style="text-align: center;">0.7000</td>
+<td style="text-align: center;">47.76</td>
+<td style="text-align: center;">47.76</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">87.6%</td>
+<td style="text-align: center;">330.92</td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td><strong>aider_repomap</strong></td>
+<td>2k</td>
+<td style="text-align: center;">0.4453</td>
+<td style="text-align: center;">0.5306</td>
+<td style="text-align: center;">161.80</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">161.80</td>
+<td style="text-align: center;">N/A*</td>
+<td style="text-align: center;">1,195.59</td>
+</tr>
+<tr>
+<td></td>
+<td>4k</td>
+<td style="text-align: center;">0.5279</td>
+<td style="text-align: center;">0.6242</td>
+<td style="text-align: center;">302.50</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">302.50</td>
+<td style="text-align: center;">N/A*</td>
+<td style="text-align: center;">1,162.08</td>
+</tr>
+<tr>
+<td></td>
+<td>8k</td>
+<td style="text-align: center;"><strong>0.5619</strong></td>
+<td style="text-align: center;"><strong>0.6700</strong></td>
+<td style="text-align: center;">580.40</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">580.40</td>
+<td style="text-align: center;">N/A*</td>
+<td style="text-align: center;">1,283.00</td>
+</tr>
+<tr>
+<td></td>
+<td>16k</td>
+<td style="text-align: center;"><strong>0.6785</strong></td>
+<td style="text-align: center;"><strong>0.8055</strong></td>
+<td style="text-align: center;">1,105.70</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">1,105.70</td>
+<td style="text-align: center;">N/A*</td>
+<td style="text-align: center;">1,425.04</td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td><strong>mr_ast_greedy</strong></td>
+<td>2k</td>
+<td style="text-align: center;">0.4730</td>
+<td style="text-align: center;">0.5580</td>
+<td style="text-align: center;">50.45</td>
+<td style="text-align: center;">19.63</td>
+<td style="text-align: center;">29.53</td>
+<td style="text-align: center;"><strong>100.0%</strong></td>
+<td style="text-align: center;"><strong>26.05</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>4k</td>
+<td style="text-align: center;">0.4939</td>
+<td style="text-align: center;">0.5843</td>
+<td style="text-align: center;">54.33</td>
+<td style="text-align: center;">33.24</td>
+<td style="text-align: center;">20.67</td>
+<td style="text-align: center;"><strong>100.0%</strong></td>
+<td style="text-align: center;"><strong>23.69</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>8k</td>
+<td style="text-align: center;">0.5531</td>
+<td style="text-align: center;">0.6513</td>
+<td style="text-align: center;">57.34</td>
+<td style="text-align: center;">45.13</td>
+<td style="text-align: center;">11.96</td>
+<td style="text-align: center;"><strong>100.0%</strong></td>
+<td style="text-align: center;"><strong>39.06</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>16k</td>
+<td style="text-align: center;">0.5667</td>
+<td style="text-align: center;">0.6667</td>
+<td style="text-align: center;">59.50</td>
+<td style="text-align: center;">53.64</td>
+<td style="text-align: center;">5.59</td>
+<td style="text-align: center;"><strong>100.0%</strong></td>
+<td style="text-align: center;"><strong>27.81</strong></td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td><strong>mr_ast_milp (Ref)</strong></td>
+<td>2k</td>
+<td style="text-align: center;"><strong>0.4846</strong></td>
+<td style="text-align: center;"><strong>0.5712</strong></td>
+<td style="text-align: center;"><strong>50.85</strong></td>
+<td style="text-align: center;"><strong>19.47</strong></td>
+<td style="text-align: center;"><strong>30.00</strong></td>
+<td style="text-align: center;"><strong>100.0%</strong></td>
+<td style="text-align: center;">77.94</td>
+</tr>
+<tr>
+<td></td>
+<td>4k</td>
+<td style="text-align: center;"><strong>0.5408</strong></td>
+<td style="text-align: center;"><strong>0.6374</strong></td>
+<td style="text-align: center;"><strong>55.15</strong></td>
+<td style="text-align: center;"><strong>32.50</strong></td>
+<td style="text-align: center;"><strong>22.11</strong></td>
+<td style="text-align: center;"><strong>100.0%</strong></td>
+<td style="text-align: center;">57.65</td>
+</tr>
+<tr>
+<td></td>
+<td>8k</td>
+<td style="text-align: center;">0.5520</td>
+<td style="text-align: center;">0.6501</td>
+<td style="text-align: center;"><strong>58.29</strong></td>
+<td style="text-align: center;"><strong>44.53</strong></td>
+<td style="text-align: center;"><strong>13.33</strong></td>
+<td style="text-align: center;"><strong>100.0%</strong></td>
+<td style="text-align: center;">58.27</td>
+</tr>
+<tr>
+<td></td>
+<td>16k</td>
+<td style="text-align: center;">0.5705</td>
+<td style="text-align: center;">0.6711</td>
+<td style="text-align: center;"><strong>59.90</strong></td>
+<td style="text-align: center;"><strong>53.60</strong></td>
+<td style="text-align: center;"><strong>5.98</strong></td>
+<td style="text-align: center;"><strong>100.0%</strong></td>
+<td style="text-align: center;">22.34</td>
+</tr>
+</tbody>
+</table>
+<p><em>*MR-AST syntax validity reflects the 516-run final serializer
+audit (the legacy serializer achieved 99.46% across the 5,160-run
+ledger); Aider RepoMap generates outline prompts rather than compilable
+modules (AST validity N/A).</em></p>
+<h3 id="marginal-component-contributions-statistical-significance">5.2
+Marginal Component Contributions &amp; Statistical Significance</h3>
+<p>Across the 129-task factorial ablation corpus (127 base-commit
+clusters), Holm-Bonferroni corrections indicate: 1.
+<strong>Multi-Resolution (<span class="math inline">\(A \to
+B\)</span>)</strong>: Adds <strong><span
+class="math inline">\(+16.61\text{ pp}\)</span></strong> recall at <span
+class="math inline">\(2\text{k}\)</span> (<span
+class="math inline">\(p_{\text{raw}} = 0.0001, p_{\text{Holm}} = 0.0006,
+d_z = +0.36\)</span>) and <span class="math inline">\(+13.07\text{
+pp}\)</span> at <span class="math inline">\(4\text{k}\)</span> (<span
+class="math inline">\(p_{\text{Holm}} = 0.0004\)</span>). 2.
+<strong>Optimizer Precedence (<span class="math inline">\(B \to
+C\)</span>)</strong>: Knapsack precedence reduces recall by
+<strong><span class="math inline">\(-5.43\text{ pp}\)</span></strong> at
+<span class="math inline">\(2\text{k}\)</span> (<span
+class="math inline">\(p_{\text{Holm}} = 0.0250\)</span>); removal
+eliminates parent taxation. 3. <strong>Static Dependency Weights (<span
+class="math inline">\(C \to D\)</span>)</strong>: Program dependence
+graph weights (Ferrante et al., 1987) yield <strong><span
+class="math inline">\(0.00\text{ pp}\)</span></strong> marginal recall
+(<span class="math inline">\(p \ge 0.3192\)</span>); graph claims are
+withdrawn. 4. <strong>MILP vs. Greedy (<span class="math inline">\(E \to
+F\)</span>)</strong>: At <span class="math inline">\(4\text{k}\)</span>,
+MILP leads greedy by <span class="math inline">\(+4.69\text{
+pp}\)</span>, but Holm correction yields <strong><span
+class="math inline">\(p_{\text{Holm}} = 0.0519\)</span> (n.s. at <span
+class="math inline">\(\alpha=0.05\)</span>)</strong>; both match
+elsewhere (<span class="math inline">\(p \ge 0.18\)</span>). Greedy is
+default.</p>
+<h3 id="information-preservation-implementation-retention">5.3
+Information Preservation &amp; Implementation Retention</h3>
+<p>At <span class="math inline">\(B=2,000\)</span>, MR-AST retains
+<strong><span class="math inline">\(1.55\times\)</span> more full
+implementations</strong> (<span class="math inline">\(19.47\)</span> vs
+<span class="math inline">\(12.55\)</span>) than Scoped BM25, allocating
+<span class="math inline">\(1,849\)</span> tokens to full code vs <span
+class="math inline">\(1,192\)</span>. Skeletons (<span
+class="math inline">\(30.00\)</span>) and stubs (<span
+class="math inline">\(1.39\)</span>) compress context to preserve edit
+capacity.</p>
+<h3 id="retrospective-commit-disjoint-benchmark">5.4 Retrospective
+Commit-Disjoint Benchmark</h3>
+<p>Evaluated across the 66-task retrospective commit-disjoint partition
+(zero commit leakage):</p>
+<p><strong>Table 2: Matched Results on Retrospective Commit-Disjoint
+Partition (66 Tasks, 65 Clusters)</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>Budget</th>
+<th style="text-align: center;">Depth <span
+class="math inline">\(K\)</span></th>
+<th style="text-align: center;">Dynamic Policy</th>
+<th style="text-align: center;">Scoped BM25</th>
+<th style="text-align: center;">Aider RepoMap</th>
+<th style="text-align: center;">Static <span
+class="math inline">\(K=60\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(\Delta\)</span> vs BM25</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">Raw <span
+class="math inline">\(p\)</span></th>
+<th style="text-align: center;">Holm-12 <span
+class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><span class="math inline">\(2,000\)</span></strong></td>
+<td style="text-align: center;"><span
+class="math inline">\(K=60\)</span></td>
+<td style="text-align: center;"><strong>49.88%</strong></td>
+<td style="text-align: center;">41.30%</td>
+<td style="text-align: center;">39.15%</td>
+<td style="text-align: center;">49.88%</td>
+<td style="text-align: center;"><span class="math inline">\(+8.58\text{
+pp}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\([-3.26,
++20.42]\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(0.1465\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.4395\text{
+(n.s.)}\)</span></td>
+</tr>
+<tr>
+<td><strong><span class="math inline">\(4,000\)</span></strong></td>
+<td style="text-align: center;"><span
+class="math inline">\(K=100\)</span></td>
+<td style="text-align: center;"><strong>64.76%</strong></td>
+<td style="text-align: center;">44.78%</td>
+<td style="text-align: center;">51.77%</td>
+<td style="text-align: center;">55.94%</td>
+<td style="text-align: center;"><strong>+19.97 pp</strong></td>
+<td style="text-align: center;"><span class="math inline">\([+8.58,
++31.36]\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(7.18 \times
+10^{-4}\)</span></td>
+<td style="text-align: center;"><strong><span
+class="math inline">\(0.0072\text{ (***)}\)</span></strong></td>
+</tr>
+<tr>
+<td><strong><span class="math inline">\(8,000\)</span></strong></td>
+<td style="text-align: center;"><span
+class="math inline">\(K=200\)</span></td>
+<td style="text-align: center;"><strong>71.72%</strong></td>
+<td style="text-align: center;">58.22%</td>
+<td style="text-align: center;">53.06%</td>
+<td style="text-align: center;">55.94%</td>
+<td style="text-align: center;"><strong>+13.50 pp</strong></td>
+<td style="text-align: center;"><span class="math inline">\([+4.02,
++22.98]\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5.29 \times
+10^{-3}\)</span></td>
+<td style="text-align: center;"><strong><span
+class="math inline">\(0.0423\text{ (*)}\)</span></strong></td>
+</tr>
+<tr>
+<td><strong><span class="math inline">\(16,000\)</span></strong></td>
+<td style="text-align: center;"><span
+class="math inline">\(K=400\)</span></td>
+<td style="text-align: center;"><strong>76.92%</strong></td>
+<td style="text-align: center;">60.48%</td>
+<td style="text-align: center;">62.74%</td>
+<td style="text-align: center;">56.16%</td>
+<td style="text-align: center;"><strong>+16.44 pp</strong></td>
+<td style="text-align: center;"><span class="math inline">\([+7.54,
++25.34]\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3.88 \times
+10^{-4}\)</span></td>
+<td style="text-align: center;"><strong><span
+class="math inline">\(0.0043\text{ (***)}\)</span></strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>*95% CIs are cluster-aggregated Student’s <span
+class="math inline">\(t\)</span> intervals across 65 commit-disjoint
+base-commit clusters; Holm-12 p reflects a post-hoc omnibus multiplicity
+correction across all 12 comparisons (3 baselines × 4 budgets).</em></p>
+<p>Dynamic scaling mitigates candidate saturation, lifting <span
+class="math inline">\(16\text{k}\)</span> recall to <strong><span
+class="math inline">\(76.92\%\)</span></strong> (<span
+class="math inline">\(+16.44\text{ pp}\)</span> over Scoped BM25,
+post-hoc <span class="math inline">\(p_{\text{Holm-12}} =
+0.0043\)</span>; <span class="math inline">\(+20.76\text{ pp}\)</span>
+over static <span class="math inline">\(K=60\)</span>, post-hoc <span
+class="math inline">\(p_{\text{Holm-12}} = 0.00056\)</span>). Dynamic
+Policy leads Aider RepoMap at <span
+class="math inline">\(8\text{k}\)</span> (<span
+class="math inline">\(+18.66\text{ pp}\)</span>, post-hoc <span
+class="math inline">\(p_{\text{Holm-12}} = 0.0435\)</span>), with no
+significant difference at other budgets under omnibus correction.</p>
+<h3 id="solver-latency-scaling-micro-benchmark">5.5 Solver Latency &amp;
+Scaling Micro-Benchmark</h3>
+<p>Table 3 compares pure solver execution across pools <span
+class="math inline">\(N \in [20, 800]\)</span> over 15 trials under
+identical inputs:</p>
+<p><strong>Table 3: Pure Solver Latency &amp; Optimality
+Micro-Benchmark</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Candidate Pool <span class="math inline">\(N\)</span></th>
+<th>HiGHS Mean (ms)</th>
+<th>HiGHS p50 (ms)</th>
+<th>Greedy Mean (ms)</th>
+<th>Greedy p50 (ms)</th>
+<th>HiGHS Speedup</th>
+<th>Optimality Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>20</strong></td>
+<td>2.89</td>
+<td>1.26</td>
+<td>1.20</td>
+<td>0.98</td>
+<td><span class="math inline">\(0.42\times\)</span></td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td><strong>60</strong></td>
+<td><strong>2.80</strong></td>
+<td>2.41</td>
+<td><strong>9.90</strong></td>
+<td>9.62</td>
+<td><strong><span
+class="math inline">\(3.53\times\)</span></strong></td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td><strong>200</strong></td>
+<td><strong>8.05</strong></td>
+<td>7.90</td>
+<td><strong>101.62</strong></td>
+<td>100.71</td>
+<td><strong><span
+class="math inline">\(12.62\times\)</span></strong></td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td><strong>800</strong></td>
+<td><strong>317.11</strong></td>
+<td>71.14</td>
+<td><strong>6,582.98</strong></td>
+<td>1,931.39</td>
+<td><strong><span
+class="math inline">\(20.76\times\)</span></strong></td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table>
+<p>HiGHS scales sub-linearly, evaluating bounds <span
+class="math inline">\(3.5\times\)</span> to <span
+class="math inline">\(20.8\times\)</span> faster than Python greedy
+loops with 0% gap. End-to-end, greedy compiles context in <span
+class="math inline">\(23.7\text{ ms}\)</span>.</p>
+<hr />
+<h2 id="downstream-gemma-4-latency-pilot-patch-taxonomy">6. Downstream
+Gemma 4 Latency Pilot &amp; Patch Taxonomy</h2>
+<p>We evaluated downstream generation on
+<strong><code>google/gemma-4-31b-it</code></strong> across 6 SWE tasks
+at <span class="math inline">\(B=2,000\)</span> (18 Vertex AI
+inferences; temp 0.2, top-p 0.95):</p>
+<p><strong>Table 4: Downstream Gemma 4 31B Prompt Latency Pilot (18
+Inferences)</strong></p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr>
+<th>Context Paradigm</th>
+<th>Token Budget</th>
+<th style="text-align: center;">Generation Success Rate</th>
+<th style="text-align: center;">Strict <code>git apply</code> Rate</th>
+<th style="text-align: center;">Mean Latency (s)</th>
+<th style="text-align: center;">Latency Delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Raw BM25</strong></td>
+<td>2,000</td>
+<td style="text-align: center;">100.0% (6/6)</td>
+<td style="text-align: center;">0.0% (0/6)</td>
+<td style="text-align: center;">10.22s</td>
+<td style="text-align: center;">Baseline</td>
+</tr>
+<tr>
+<td><strong>Scoped BM25</strong></td>
+<td>2,000</td>
+<td style="text-align: center;">100.0% (6/6)</td>
+<td style="text-align: center;">0.0% (0/6)</td>
+<td style="text-align: center;">10.55s</td>
+<td style="text-align: center;"><span
+class="math inline">\(+3.2\%\)</span></td>
+</tr>
+<tr>
+<td><strong>MR-AST</strong></td>
+<td>2,000</td>
+<td style="text-align: center;">100.0% (6/6)</td>
+<td style="text-align: center;">0.0% (0/6)</td>
+<td style="text-align: center;"><strong>7.57s</strong></td>
+<td style="text-align: center;"><strong><span
+class="math inline">\(-28.3\%\)</span></strong></td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><strong>Prompt Latency &amp; Attention Efficiency</strong>: Gemma 4
+generation latency dropped by <strong><span
+class="math inline">\(-28.3\%\)</span></strong> under MR-AST (<span
+class="math inline">\(7.57\text{s}\)</span> vs <span
+class="math inline">\(10.55\text{s}\)</span>, paired <span
+class="math inline">\(t(5)=2.76, p=0.038\)</span>), saving <span
+class="math inline">\(2.98\text{s}\)</span> per inference. Skeletons
+compress peripheral code into signatures, focusing attention on active
+symbols and saving <span class="math inline">\(\sim 1\text{
+minute}\)</span> across a hypothetical 20-turn agent trajectory.</li>
+<li><strong>Patch Failure Taxonomy</strong>: Single-turn diffs achieved
+0.0% strict <code>git apply</code> rates across all paradigms due to
+line drift (<span class="math inline">\(61.1\%\)</span>), indentation
+mismatch (<span class="math inline">\(22.2\%\)</span>), and missing hunk
+headers (<span class="math inline">\(16.7\%\)</span>). This highlights
+the limitation of single-turn unified diffs under zero-shot prompting
+and motivates interactive multi-turn repair environments.</li>
+<li><strong>Execution Boundary</strong>: Serving INT4 31B models with
+FP8 activations requires 4x NVIDIA L4 GPUs (<span
+class="math inline">\(TP=4\)</span>); offline AST compilation was
+evaluated locally while LLM generation was executed via Vertex AI.</li>
+</ol>
+<hr />
+<h2 id="the-full-file-localization-paradox">7. The Full-File
+Localization Paradox</h2>
+<p>In whole-file retrieval (<code>full_file</code>), expanding budget
+from <span class="math inline">\(8\text{k}\)</span> to <span
+class="math inline">\(16\text{k}\)</span> degrades Hit@1 localization:
+large test files (<code>tests/test_requests.py</code> has 15,941 tokens
+vs 7,977 for <code>requests/models.py</code>) exhaust the entire window,
+displacing implementation files at 16k. MR-AST resolves this pathology
+by selectively extracting target test methods while retaining enclosing
+modules at stub resolution.</p>
+<hr />
+<h2 id="discussion-limitations">8. Discussion &amp; Limitations</h2>
+<ol type="1">
+<li><strong>Cross-Language AST Lattice</strong>: Evaluated on Python;
+the 4-tier lattice <span class="math inline">\(\mathcal{R}\)</span>
+extends to any block-scoped language (C++/Java signatures/abstract
+classes; Rust/Go traits/interfaces). Serializers for Go, Java,
+TypeScript, and Rust were implemented with verified cost monotonicity
+(<span class="math inline">\(0 = c_0 &lt; c_1 \le c_2 \le c_3\)</span>),
+but cross-language empirical recall benchmarks remain future work.</li>
+<li><strong>Interactive Agent Integration</strong>: Zero-shot diffs fail
+strict patching across all paradigms; future work will embed MR-AST in
+iterative agent loops (SWE-agent) to measure multi-turn issue
+resolution.</li>
+<li><strong>Surrogate Token Additivity</strong>: While atomic pruning
+absorbs merge deltas (<span class="math inline">\(\le 2\)</span> tokens
+per boundary) with 100% compliance, joint layout-token optimization
+remains open.</li>
+<li><strong>Retrospective Protocol</strong>: The 66-task partition
+enforces git base-commit disjointness across 65 clusters. However,
+candidate saturation was observed across all 129 tasks before
+partitioning; evaluation is retrospective rather than a prospective
+trial.</li>
+</ol>
+<hr />
+<h2 id="conclusion">9. Conclusion</h2>
+<p>We introduced <strong>MR-AST</strong>, a multi-resolution AST context
+compiler for budget-constrained agents. Formulating context compilation
+as an MCKP with candidate schedule <span
+class="math inline">\(K_{\text{step}}(B)\)</span>, MR-AST retains
+<strong><span class="math inline">\(1.55\times\)</span> more full
+implementations</strong> at <span
+class="math inline">\(2\text{k}\)</span>, ensures syntactic validity via
+Invariant 1, lifts retrospective commit-disjoint <span
+class="math inline">\(16\text{k}\)</span> recall to <strong><span
+class="math inline">\(76.92\%\)</span></strong> (<span
+class="math inline">\(+16.44\text{ pp}\)</span> over Scoped BM25,
+post-hoc <span class="math inline">\(p_{\text{Holm-12}} =
+0.0043\)</span>), and shows exploratory prompt latency reductions in
+pilot trials.</p>
+<hr />
+<h2 id="references">References</h2>
+<ol type="1">
+<li>Chen, Z., Gao, Z., Shen, C., &amp; Zhang, X. (2025). <em>LocAgent:
+Graph-Guided LLM Agents for Code Localization</em>. In Proceedings of
+the 63rd Annual Meeting of the Association for Computational Linguistics
+(ACL 2025).</li>
+<li>Feng, Y., Wang, S., Li, Y., &amp; Tan, L. (2026). <em>On the
+Effectiveness of Context Compression for Repository-Level Tasks: An
+Empirical Investigation</em>. arXiv:2604.13725.</li>
+<li>Gauthier, P. (2024). <em>Aider: AI pair programming in your
+terminal</em>. GitHub repository:
+https://github.com/paul-gauthier/aider.</li>
+<li>Yang, J., Jimenez, C. E., Wettig, A., Lieret, K., Yao, S.,
+Narasimhan, K., &amp; Press, O. (2024). <em>SWE-agent: Agent-Computer
+Interfaces Enable Automated Software Engineering</em>.
+arXiv:2405.15793.</li>
+<li>Jimenez, C. E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O.,
+&amp; Narasimhan, K. (2024). <em>SWE-bench: Can Language Models Resolve
+Real-World GitHub Issues?</em> ICLR 2024.</li>
+<li>Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M.,
+Petroni, F., &amp; Liang, P. (2024). <em>Lost in the Middle: How
+Language Models Use Long Contexts</em>. TACL, 12, 157–173.</li>
+<li><em>Gemma 4 Evaluation Tokenizer Artifact</em>. Competition
+evaluation asset (<code>models/gemma4_tokenizer/tokenizer.json</code>,
+SHA-256:
+<code>cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f</code>,
+262,144 BPE vocabulary).</li>
+<li>Huangfu, Q., &amp; Hall, J. A. (2018). <em>Parallelizing the dual
+revised simplex method</em>. Mathematical Programming Computation,
+10(1), 119–142.</li>
+<li>Kellerer, H., Pferschy, U., &amp; Pisinger, D. (2004). <em>Knapsack
+Problems</em>. Springer Berlin Heidelberg.</li>
+<li>Ferrante, J., Ottenstein, K. J., &amp; Warren, J. D. (1987). <em>The
+program dependence graph and its use in optimization</em>. ACM TOPLAS,
+9(3), 319–349.</li>
+</ol>
+</body>
+</html>

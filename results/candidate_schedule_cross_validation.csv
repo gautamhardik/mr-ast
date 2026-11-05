@@ -1,0 +1,10 @@
+fold,training_split,test_split,budget,train_best_K,train_recall_K60,train_recall_K100,train_recall_K200,train_recall_K400,test_selected_K,test_recall_pct
+1,Dev (63 tasks),Heldout (66 tasks),2000,60,0.4697,0.4624,0.4022,0.3104,60,47.61
+1,Dev (63 tasks),Heldout (66 tasks),4000,200,0.4728,0.5519,0.6231,0.5689,200,67.63
+1,Dev (63 tasks),Heldout (66 tasks),8000,400,0.5442,0.6020,0.6914,0.7153,400,73.36
+1,Dev (63 tasks),Heldout (66 tasks),16000,400,0.5720,0.6457,0.7208,0.7647,400,76.92
+2,Heldout (66 tasks),Dev (63 tasks),2000,100,0.4761,0.5739,0.5078,0.3934,100,46.24
+2,Heldout (66 tasks),Dev (63 tasks),4000,200,0.5140,0.6476,0.6763,0.6471,200,62.31
+2,Heldout (66 tasks),Dev (63 tasks),8000,400,0.5616,0.6703,0.7172,0.7336,400,71.53
+2,Heldout (66 tasks),Dev (63 tasks),16000,400,0.5616,0.6724,0.7300,0.7692,400,76.47
+

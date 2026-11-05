@@ -1,0 +1,5 @@
+repo,snapshot,files_evaluated,symbols_evaluated,raw_tokens,tier2_contract_skeleton_tokens,tier1_structural_stub_tokens,tier2_skeleton_comp_pct,tier1_stub_comp_pct
+fastapi,fastapi_11194.tgz,30,109,7967,3493,3493,56.16,56.16
+httpx,httpx_3672.tgz,30,725,68193,21331,19478,68.72,71.44
+requests,requests_6589.tgz,30,589,91431,25171,21457,72.47,76.53
+rich,rich_2725.tgz,30,125,15327,10259,10131,33.07,33.9

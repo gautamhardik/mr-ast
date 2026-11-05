@@ -1,0 +1,9 @@
+ablation_id,description,budget,mean_gold_file_recall,hit_at_1,mean_retained_symbols,syntactic_validity_rate,precedence_violations,solve_time_ms
+full_mrtopos_milp,Full MR-TopoS (Exact MILP),4000,0.7132,0.2636,59.8,1.0,0,4.32
+ablation_binary_tiers,No Multi-Resolution (Binary 0/1),4000,0.5581,0.2093,31.0,1.0,0,3.15
+ablation_no_scope_preservation,No AST Scope Preservation (Flat Snippets),4000,0.6202,0.2326,41.5,0.0,0,0.44
+ablation_no_causal_topology,No Causal Path Topology (lambda_topo=0),4000,0.6512,0.2171,58.6,1.0,0,3.95
+ablation_no_differential_pruner,No Differential Typing Pruner,4000,0.6434,0.2403,47.2,0.961,0,4.40
+ablation_candidate_pool_k20,Candidate Pool Scaling K=20,4000,0.5426,0.2481,20.0,1.0,0,1.82
+ablation_candidate_pool_k100,Candidate Pool Scaling K=100,4000,0.7209,0.2636,68.4,1.0,0,7.18
+

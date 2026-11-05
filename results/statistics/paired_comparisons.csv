@@ -1,0 +1,8 @@
+comparison,budget,metric,baseline_mean,mrtopos_mean,mean_difference,percent_improvement,t_statistic,p_value,cohens_d,ci_95_low,ci_95_high,significance
+MR-TopoS vs Scoped BM25,2000,gold_file_recall,0.3728,0.4846,0.1118,29.98%,2.57,1.12e-02,0.23,0.0312,0.1963,p < 0.05
+MR-TopoS vs Scoped BM25,2000,retained_symbols_count,12.5504,50.8527,38.3023,305.19%,56.04,6.28e-92,4.95,36.9996,39.582,p < 0.001 (Significant)
+MR-TopoS vs Whole-File,2000,gold_file_recall,0.1262,0.4846,0.3584,284.12%,8.41,6.84e-14,0.74,0.2801,0.444,p < 0.001 (Significant)
+MR-TopoS vs Scoped BM25,4000,gold_file_recall,0.4282,0.5408,0.1126,26.30%,3.66,3.66e-04,0.32,0.0548,0.1735,p < 0.001 (Significant)
+MR-TopoS vs Scoped BM25,4000,retained_symbols_count,19.9845,55.1473,35.1628,175.95%,41.91,1.28e-76,3.7,33.5733,36.7442,p < 0.001 (Significant)
+MR-TopoS vs Whole-File,4000,gold_file_recall,0.1287,0.5408,0.412,320.06%,10.06,6.62e-18,0.89,0.3291,0.4966,p < 0.001 (Significant)
+MR-TopoS vs Raw BM25,2000,syntactic_validity,0.8372,1.0,0.1628,19.44%,4.99,1.94e-06,0.44,0.1008,0.2248,p < 0.001 (Significant)

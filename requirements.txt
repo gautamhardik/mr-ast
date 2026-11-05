@@ -1,0 +1,7 @@
+transformers>=4.45.0
+scipy>=1.14.0
+rank_bm25>=0.2.2
+matplotlib>=3.9.0
+numpy>=1.26.0
+pytest>=8.0.0
+

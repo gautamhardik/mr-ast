@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CodeGraphSchema",
+  "description": "Schema for swegemma pre-computed code AST dependency and call graphs",
+  "type": "object",
+  "required": [
+    "directed",
+    "multigraph",
+    "graph",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "directed": {
+      "type": "boolean",
+      "enum": [
+        true
+      ]
+    },
+    "multigraph": {
+      "type": "boolean",
+      "enum": [
+        true
+      ]
+    },
+    "graph": {
+      "type": "object"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Fully qualified dotted symbol path, e.g. module.Class.method"
+          },
+          "name": {
+            "type": "string",
+            "description": "Dotted symbol identifier"
+          },
+          "text": {
+            "type": "string",
+            "description": "Source code block or declaration signature of the symbol"
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "target",
+          "type",
+          "key"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "Source node symbol ID"
+          },
+          "target": {
+            "type": "string",
+            "description": "Target node symbol ID"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "calls"
+            ],
+            "description": "Relationship type connecting symbols"
+          },
+          "key": {
+            "type": "integer",
+            "description": "Multi-graph edge index"
+          }
+        }
+      }
+    }
+  }
+}
+

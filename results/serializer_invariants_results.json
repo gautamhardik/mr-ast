@@ -1,0 +1,96 @@
+{
+  "synthetic_invariant_tests": [
+    {
+      "case": "Case 1: Low-utility STUB parent + High-utility FULL child",
+      "ast_valid": true,
+      "contains_parent_wrapper": true,
+      "contains_indented_child": true,
+      "passed": true
+    },
+    {
+      "case": "Case 2: Multi-method shared parent container",
+      "ast_valid": true,
+      "contains_parent_wrapper": true,
+      "contains_indented_children": true,
+      "passed": true
+    },
+    {
+      "case": "Case 3: Nested class hierarchy",
+      "ast_valid": true,
+      "contains_inner_class": true,
+      "contains_indented_method": true,
+      "passed": true
+    },
+    {
+      "case": "Case 4: Parent downgraded to EXCLUDED while child remains selected",
+      "ast_valid": true,
+      "contains_parent_wrapper": true,
+      "contains_indented_child": true,
+      "passed": true
+    },
+    {
+      "case": "Case 5: Over-budget fallback stress test (35 tokens)",
+      "budget": 35,
+      "final_tokens": 34,
+      "is_budget_compliant": true,
+      "trimmed_nodes_count": 5,
+      "ast_valid": false,
+      "passed": false
+    }
+  ],
+  "benchmark_fallback_audit": {
+    "total_conditions": 2580,
+    "overall_compliance_pct": 100.0,
+    "zero_overhead_runs": 2167,
+    "positive_overhead_runs": 413,
+    "max_overhead_tokens": 60,
+    "mean_overhead_tokens": 3.73,
+    "method_breakdown": {
+      "bm25_raw": {
+        "total_runs": 516,
+        "zero_overhead_runs": 516,
+        "positive_overhead_runs": 0,
+        "positive_overhead_pct": 0.0,
+        "mean_overhead_tokens": 0.0,
+        "max_overhead_tokens": 0,
+        "compliance_pct": 100.0
+      },
+      "bm25_scoped": {
+        "total_runs": 516,
+        "zero_overhead_runs": 516,
+        "positive_overhead_runs": 0,
+        "positive_overhead_pct": 0.0,
+        "mean_overhead_tokens": 0.0,
+        "max_overhead_tokens": 0,
+        "compliance_pct": 100.0
+      },
+      "full_file": {
+        "total_runs": 516,
+        "zero_overhead_runs": 516,
+        "positive_overhead_runs": 0,
+        "positive_overhead_pct": 0.0,
+        "mean_overhead_tokens": 0.0,
+        "max_overhead_tokens": 0,
+        "compliance_pct": 100.0
+      },
+      "mrtopos_con_greedy": {
+        "total_runs": 516,
+        "zero_overhead_runs": 308,
+        "positive_overhead_runs": 208,
+        "positive_overhead_pct": 40.31,
+        "mean_overhead_tokens": 9.19,
+        "max_overhead_tokens": 60,
+        "compliance_pct": 100.0
+      },
+      "mrtopos_milp": {
+        "total_runs": 516,
+        "zero_overhead_runs": 311,
+        "positive_overhead_runs": 205,
+        "positive_overhead_pct": 39.73,
+        "mean_overhead_tokens": 9.45,
+        "max_overhead_tokens": 60,
+        "compliance_pct": 100.0
+      }
+    }
+  }
+}
