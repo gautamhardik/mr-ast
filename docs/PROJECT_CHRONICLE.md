@@ -1705,3 +1705,41 @@ esults/dense_hybrid_benchmark.csv (generated).
   - Submission archive: 10.17 MB, 0 corruption errors.
   - Deleted files: Strictly respected; no deleted banners or stale files restored.
   - Final State: GALLERY IMAGES FULLY REDESIGNED AND READY FOR KAGGLE WRITEUP.
+
+
+## Milestone 46: Public GitHub Repository Creation and Codebase / Notebook Deployment
+- **Timestamp**: 2026-11-06 04:10
+- **Request / Trigger**: User requested pushing the replication notebook and codebase to GitHub to populate the Kaggle Writeup submission links.
+- **Rationale**: Provide an authoritative public GitHub repository (`gautamhardik/mr-ast`) for the Kaggle Paper Track submission, housing the complete codebase, manuscript, 29/29 test suite, and the replication notebook.
+- **Actions Performed**:
+  1. Authored `.gitignore` excluding 21GB `DATA/` cache, agent/planning meta directories (`.planning/`, `.agents/`, `.gsd/`), `.gemini`, `*.zip`, and python bytecode.
+  2. Initialized git repository on branch `main` and committed the complete project (335 files, 2,478,955 insertions).
+  3. Created and published public GitHub repository `gautamhardik/mr-ast` via `gh repo create` with description "MR-AST: Multi-Resolution AST Context Selection for Google Gemma 4 Developer Agents".
+  4. Updated `README.md` clone commands to reflect the live repository URL and pushed commit `78b7c92` to `origin/main`.
+- **Files Changed**:
+  - `.gitignore` (created).
+  - `README.md` (updated clone URL to `gautamhardik/mr-ast`).
+  - `docs/PROJECT_CHRONICLE.md` (recorded Milestone 46).
+- **Verification Results**:
+  - Remote repository: Live at `https://github.com/gautamhardik/mr-ast`.
+  - Notebook URL: Accessible at `https://github.com/gautamhardik/mr-ast/blob/main/notebooks/mrast_quickstart_and_replication.ipynb`.
+  - Final State: GITHUB REPOSITORY DEPLOYED AND LIVE.
+
+
+## Milestone 47: Kaggle Web-Markdown Sanitization and Formatting Optimization
+- **Timestamp**: 2026-11-06 04:15
+- **Request / Trigger**: User identified broken rendering on Kaggle's rich text editor (raw LaTeX dollar signs, unrendered `\Delta`, broken asterisks and parentheses `()*` in Table 2, and anonymous git clone links).
+- **Rationale**: Kaggle's web markdown editor does not support LaTeX math delimiters (`$`, `$$`, `\text{}`) and chokes on nested bold asterisks. Clean, web-safe Markdown using plain characters, standard unicode symbols, and un-nested bolding ensures crisp, professional presentation.
+- **Actions Performed**:
+  1. Sanitized all dollar signs and LaTeX formatting across the entire write-up markdown text.
+  2. Rebuilt Table 2 to eliminate all LaTeX tags (`$K=60$`, `$\Delta$`, `\text{pp}`, `(***)`) and replaced them with clean web columns: `K = 60`, `Diff vs BM25`, `0.0072 (p < 0.01)`.
+  3. Replaced mathematical LaTeX formulas in Section 3 with clean, structured bullet lists and code spans.
+  4. Updated git clone quickstart command to use the live public repo `https://github.com/gautamhardik/mr-ast.git`.
+  5. Updated `paper/figures/WRITEUP_IMAGE_GALLERY.md` and pushed commit `24387fd` to `origin/main`.
+- **Files Changed**:
+  - `paper/figures/WRITEUP_IMAGE_GALLERY.md` (sanitized and updated).
+  - `docs/PROJECT_CHRONICLE.md` (recorded Milestone 47).
+- **Verification Results**:
+  - Table 2: 100% free of raw LaTeX tags, dollar signs, and broken asterisk formatting.
+  - Clone link: Live and functional (`gautamhardik/mr-ast`).
+  - Final State: WRITEUP MARKDOWN FULLY SANITIZED FOR KAGGLE EDITOR.
